@@ -1,6 +1,171 @@
 @use "../global" as *;
 
 .l-main {
-  padding-block-start: rm(72);
+
   min-height: 100vh;
 }
+
+.l-recent-top {
+  padding-block: rm(24) rm(72);
+
+
+  @include mq(sp) {
+    padding-block: rm(24) rm(33);
+   }
+}
+
+.l-best-planner__container {
+  margin-top: 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 56px;
+  margin-bottom: 54px;
+  position: relative;
+}
+
+.l-reccomend__container {
+  margin-top: 64px;
+  background-color: $color-bg;
+  padding-block: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 57px 43px;
+
+  @include mq(sp) {
+   gap: 25px;
+   padding-block: 48px 24px;
+    
+        }
+  
+}
+
+.l-popular__grid {
+  @include mq(pc) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: center;
+  padding-block: 24px 64px;
+  row-gap: rm(32);
+  column-gap: rm(23);
+  }
+
+  
+}
+
+.l-plan__area-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 348px ));
+  justify-content: space-between;
+
+  @include mq(sp) {
+    grid-template-columns: repeat(1, minmax(200px, 348px ));
+    row-gap: 20px;
+        }
+  
+}
+
+.l-reccomendation__card-list {
+  @include mq(pc) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: rm(24);
+  margin-block: rm(32) rm(64);
+  }
+
+  
+}
+
+.l-recommendation__swipe {
+  margin-block: rm(32) rm(64);
+  padding-block: rm(49) rm(43);
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 100vw;
+    height: 100%;
+    background-color: $color-bg;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 50vw);
+    right: calc(50% - 50vw);
+    bottom: 0;
+    z-index: -1;
+  }
+  
+}
+
+.l-pickup-tag__container {
+  margin-top: 64px;
+  width: 100%;
+  height: auto;
+  padding-block: rm(36) rm(22);
+  padding-inline: rm(91);
+  background-color: #fff;
+
+  @include mq(sp) {
+    padding-inline: rm(20);
+    margin-top: 24px;
+        }
+}
+
+.l-voice__container {
+  padding-block: rm(24) rm(64);
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #C8C8C8;
+  padding-inline: rm(41);
+  margin-top: 64px;
+
+    @include mq(sp) {
+    padding-inline: rm(4);
+  
+        }
+}
+
+.c-voice__card-list {
+  @include mq(pc) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: rm(24);
+  margin-block: rm(24) rm(64);
+
+  }
+ 
+}
+
+.l-instagram__gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: rm(40);
+  margin-top: 64px;
+  padding-inline: rm(20);
+  @include mq(sp) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: rm(24) rm(16);
+    margin-top: 19px;
+        }
+  
+}
+
+.p-instgram__item {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.l-voice__swipe {
+  padding-block: rm(24) rm(34);
+}
+

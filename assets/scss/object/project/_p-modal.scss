@@ -1,0 +1,213 @@
+@use "../../global" as *;
+
+
+//プラン のカード ========================
+
+
+  .p-plan__modal {
+    width: calc(750 / 1440 * 100%);
+    height: auto;
+    max-height: 302px;
+    background-color: #fff;
+    padding: 45px 63px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 421;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -3;
+    @include mq(sp) {
+     max-height: unset;
+     width: 80%;
+     padding: 48px 32px;
+     }
+
+    &.is-show {
+      opacity: 1;
+    visibility: visible;
+    z-index: 421;
+    }
+  }
+  .p-plan__modal-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 20px;
+
+    @include mq(sp) {
+      flex-direction: column;
+     }
+  }
+  .p-plan__modal-left {
+    width: calc(50% - 32px);
+    height: auto;
+
+    @include mq(sp) {
+    width: 100%;
+     }
+  }
+  .p-plan__modal-right {
+    width: calc(50% - 32px);
+    height: auto;
+
+    @include mq(sp) {
+      width: 100%;
+       }
+  }
+  .p-plan__modal-left,
+  .p-plan__modal-right {
+     li {
+      padding-block: 16px;
+      @include font(16, 500, 1, 0);
+      line-height: 1;
+      color: #000;
+      position: relative;
+      border-bottom: 1px solid $color-main;
+
+      a {
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background-color: #000;
+          left: 50%;
+          translate: -50%;
+          bottom: -12px;
+          scale: 0 1;
+          transition: scale 0.3s ease;
+        }
+     
+        
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          cursor: pointer;
+          &::before {
+            animation: btnArrow_animation 0.3s ease forwards;
+         }
+      }
+   }
+
+      &::before {
+        content: '';
+        width: 27px;
+        height: 5px;
+        background-image: url('./../img/arrow.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+        right: 0;
+        
+      }
+        
+     }
+  }
+
+
+
+//エリア のカード ========================
+
+.p-area__modal {
+  width: calc(750 / 1440 * 100%);
+  height: auto;
+  
+  background-color: #fff;
+  padding: 25px 31px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 421;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -3;
+
+  @include mq(sp) {
+    width: 80%;
+     }
+
+  &.is-show {
+    opacity: 1;
+  visibility: visible;
+  z-index: 421;
+  }
+}
+.p-area__modal-container {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+
+  @include mq(sp) {
+   flex-direction: column;
+     }
+}
+.p-area__modal-left {
+  width: calc(50% - 32px);
+  height: auto;
+
+  @include mq(sp) {
+    width: 100%;
+     }
+}
+.p-area__modal-right {
+  width: calc(50% - 32px);
+  height: auto;
+
+  @include mq(sp) {
+    width: 100%;
+     }
+}
+.p-area__modal-left,
+.p-area__modal-right {
+   li {
+    padding-block: 12px;
+   display: flex;
+   align-items: center;
+   column-gap: 14px;
+    position: relative;
+    border-bottom: 1px solid $color-base;
+
+    @media (hover: hover) {
+      &:hover {
+        cursor: pointer;
+        &::before {
+          animation: btnArrow_animation 0.3s ease forwards;
+       }
+    }
+ }
+
+    &::before {
+      content: '';
+      width: 27px;
+      height: 5px;
+      background-image: url('./../img/arrow.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 50%;
+      translate: 0 -50%;
+      right: 0;
+      
+    }
+
+    p {
+      @include font(16, 500, 1, 0);
+      line-height: 1.5;
+      color: #000;
+    }
+
+    img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+    }
+      
+   }
+}

@@ -11,3 +11,81 @@
     opacity: 1;
   }
 }
+
+
+@keyframes slideUpAnimation {
+  0% {
+    translate: 0 100%;
+  }
+  100% {
+    translate: 0;
+  }
+}
+
+@keyframes slideLeftAnimation {
+  0% {
+    translate: -205% 0;
+  }
+  100% {
+    translate: 0;
+  }
+}
+
+@keyframes slideUpAnimation2 {
+  0% {
+    translate: 0 50px;
+    opacity: 0;
+  }
+  100% {
+    translate: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideShowAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+   opacity: 1;
+  }
+}
+
+@keyframes fv_SlideDownAnimation {
+  0% {
+   translate: 0 -105%;
+  }
+  100% {
+  translate: 0;
+  }
+}
+
+@keyframes fv_slideRightAnimation {
+  0% {
+   translate: 105% 0;
+  }
+  100% {
+  translate: 0;
+  }
+}
+
+@keyframes fv_slideLeftAnimation {
+  0% {
+   translate: -105% 0;
+  }
+  100% {
+  translate: 0;
+  }
+}
+
+@keyframes btnArrow_animation {
+  0% {
+    translate: 0 -50%;
+  }
+  50% {
+    translate: 8px -50%;
+  }
+  100% {
+    translate: 0 -50%;
+  }
+}

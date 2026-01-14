@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- meta情報 -->
-    <title>Document</title>
-    <meta name="description" content="" />
+    <title>ブライダルプランナーのポータル</title>
+    <meta name="description" content="結婚式を創るのはヒト。 ふたりの理想の結婚式を一緒に創ってくれる ヒトから探しませんか。" />
 
     <!-- ogp -->
     <meta property="og:url" content="" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="ブライダルプランナーのポータル" />
+    <meta property="og:description" content="結婚式を創るのはヒト。 ふたりの理想の結婚式を一緒に創ってくれる ヒトから探しませんか。" />
+    <meta property="og:site_name" content="ブライダルプランナーのポータル" />
     <meta property="og:image" content="" />
     <meta property="og:locale" content="ja_JP" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:description" content="" />
+    <meta name="twitter:description" content="結婚式を創るのはヒト。 ふたりの理想の結婚式を一緒に創ってくれる ヒトから探しませんか。" />
 
     <!-- favicon -->
     <link rel="icon" href="./assets/img/favicon.ico" type="image/svg+xml" />
@@ -30,9 +30,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet" />
 
+     <!-- fontawasome -->
+    <script src="https://kit.fontawesome.com/91f1142cd5.js" crossorigin="anonymous"></script>
+
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/lib/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./assets/css/style.css?ver1.0" />
+    <link rel="stylesheet" href="./assets/scss/style.css?ver1.0" />
+
+    <script src="https://unpkg.com/split-type"></script>
 
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -42,60 +47,1986 @@
   <body>
 		<header class="p-header">
 			<div class="p-header__inner">
-				<a href="" class="p-header__logo">ロゴ</a>
-				<nav class="p-header__nav">
-					<ul class="p-header__list">
-						<li><a href="">トップ</a></li>
-						<li><a href="">私たちについて</a></li>
-						<li><a href="">サービス</a></li>
-					</ul>
-					<a href="" class="p-header__btn">Contact</a>
-				</nav>
+        <div class="p-header__item --d-active">
+          <button class="p-drawer__icon">
+            <div class="p-drawer__icon--bar"></div>
+            <div class="p-drawer__icon--bar"></div>
+            <div class="p-drawer__icon--bar"></div>
+          </button>
+        </div><!-- /.p-header__item -->
+				<div class="p-header__nav">
+					<a href="">
+          <div class="p-header__item">
+            
+            <div class="p-header__icon"><img src="./assets/img/emojione-monotone_japanese-symbol-for-beginner.svg" alt="">
+            </div><!-- /.p-header__icon -->
+            <p class="p-header__link">初めて<br> ご利用の方へ</p><!-- /.p-header__link -->
+          </div>
+        </a>
+        <a href="">
+          <div class="p-header__item">
+            <div class="p-header__icon"><img src="./assets/img/simple-line-icons_login.svg" alt="">
+            </div><!-- /.p-header__icon -->
+            <p class="p-header__link">ログイン</p><!-- /.p-header__link -->
+          </div>
+        </a>
+        <a href="">
+          <div class="p-header__item">
+            <div class="p-header__icon"><img src="./assets/img/ant-design_heart-filled.svg" alt="">
+            </div><!-- /.p-header__icon -->
+            <p class="p-header__link">お気に入り<br>
+              レポート</p><!-- /.p-header__link -->
+          </div>
+        </a>
+
+				</div>
 			</div>
 		</header>
 		
-		<button class="p-drawer__icon">
-			<div class="p-drawer__icon--bar"></div>
-			<div class="p-drawer__icon--bar"></div>
-			<div class="p-drawer__icon--bar"></div>
-		</button>
+    <div class="p-main-bg"></div><!-- /.p-main-bg -->
+	
 		
 		<div class="p-drawer">
 			<div class="p-drawer__body">
+        <div class="p-drawer__logo"><a href="#top"><img src="./assets/img/logo.svg" alt=""></a></div><!-- /.p-drawer__logo -->
+
+        <div class="p-drawer__top">
+        <div class="p-drawer__left">
 				<ul class="p-drawer__list">
-					<li><a href="">トップ</a></li>
-					<li><a href="">私たちについて</a></li>
-					<li><a href="">サービス</a></li>
+					<li><a href="">プランナーを探す</a></li>
+					<li><a href="">シンデレラレポ</a></li>
+					<li><a href="">お気に入りレポート</a></li>
 				</ul>
-				<a href="" class="p-drawer__btn">お問い合わせ</a>
+				<a href="" class="p-drawer__btn">ログイン</a>
+      </div><!-- /.p-drawer___left -->
+      <div class="p-drawer__right">
+				<ul class="p-drawer__list">
+					<li><a href="">初めてご利用される方へ</a></li>
+					<li><a href="">よくあるご質問</a></li>
+					<li><a href="">お問い合わせ</a></li>
+				</ul>
+			
+      </div><!-- /.p-drawer___left -->
+    </div><!-- /.p-drawer__top -->
+
+    <div class="p-drawer__policy">
+      <ul class="p-drawer__link">
+        <li><a href="">運営会社</a></li>
+        <li><a href="">プライバシーポリシー</a></li>
+        <li><a href="">利用規約</a></li>
+      </ul><!-- /.p-drawer__link -->
+    </div><!-- /.p-drawer__policy -->
 			</div>
 		</div>
 
+    <div class="p-plan__modal">
+      <div class="p-plan__modal-container">
+        <ul class="p-plan__modal-left">
+          <li><a href="">北海道・東北 (15)</a></li>
+          <li><a href="">関東・甲信越 (35)</a></li>
+          <li><a href="">北陸・東海 (25)</a></li>
+          <li><a href="">関西・中国 (18)</a></li>
+        </ul><!-- /.p-plan__modal-left -->
+
+        <ul class="p-plan__modal-right">
+          <li><a href="">四国・九州 (16)</a></li>
+          <li><a href="">沖縄 (19)</a></li>
+          <li><a href="">海外 (10)</a></li>
+        </ul><!-- /.p-plan__modal-left -->
+      </div><!-- /.p-plan__modal-container -->
+    </div><!-- /.p-plan__modal -->
+
+    <div class="p-area__modal">
+      <div class="p-area__modal-container">
+        <ul class="p-area__modal-left">
+          <li><img src="./assets/img/wedding-3.jpg" alt="" class="p-area__modal-image"><p class="p-area__txt">国内挙式・披露宴</p></li>
+          <li><img src="./assets/img/report-2.jpg" alt="" class="p-area__modal-image"><p class="p-area__txt">海外ウェディング</p></li>
+          <li><img src="./assets/img/report-5.jpg" alt="" class="p-area__modal-image"><p class="p-area__txt">フォトウェディング</p></li>
+          
+        </ul><!-- /.p-plan__modal-left -->
+
+        <ul class="p-area__modal-right">
+          <li><img src="./assets/img/photo-2.jpg" alt="" class="p-area__modal-image"><p class="p-area__txt">家族・少人数 <br>
+            ウェディング</p></li>
+          <li><img src="./assets/img/photo-1.jpg" alt="" class="p-area__modal-image"><p class="p-area__txt">リゾート・ビーチ <br>
+            アウトドア <br>
+            ウェディング</p></li>
+        </ul><!-- /.p-plan__modal-left -->
+      </div><!-- /.p-plan__modal-container -->
+    </div><!-- /.p-plan__modal -->
 
 
-    <main class="l-main">
-      <section class="p-test">
-        <div class="l-inner">
-          <div class="p-test__container">
-            <div class="p-test__text-wrap">
-              <h2 class="p-test__title">たいとる</h2>
-              <p class="p-test__text">
-                テストテキストですテストテキストテストテキストですテストテキストテストテキストですテストテキストテストテキストですテストテキスト
-              </p>
-            </div>
-            <picture class="p-test__img">
-              <img src="./assets/img/profile-icon.jpeg" alt='' width='' height='' loading='lazy'>
-            </picture>
-          </div>
-        </div>
+
+    <main class="l-main" id="top">
+      <section class="l-section p-mv">
+        <div class="p-mv__container">
+          <div class="p-mv__inner">
+            <p class="p-mv__copy">You can meet <br>the best wedding planner.</p><!-- /.p-mv__copy -->
+            <div class="p-mv__text-wrap">
+              <p class="p-mv__title"> <span>誰</span>と作るか</p><!-- /.p-mv__title -->
+              <p class="p-mv__title-mid">から</p><!-- /.p-mv__title -->
+              <p class="p-mv__title">始める結婚式</p><!-- /.p-mv__title -->
+            </div><!-- /.p-mv__text-wrap -->
+            <div class="p-mv__logo">
+              <img src="./assets/img/logo.svg" alt="">
+            </div><!-- /.p-mv__logo -->
+          </div><!-- /.p-mv__inner -->
+        </div><!-- /.p-mv__container -->
+
+        <div class="c-mv__button-wrap">
+          <button class="c-mv__button js-plan-btn" id="js-plan-btn">
+            <div class="c-mv__button-inner">
+              <a href="#">おすすめの <br> <span>プラン</span>から<br>プランナーを探す</a>
+            </div><!-- /.c-mv__button-inner -->
+          </button><!-- /.c-mv__button -->
+
+          <button class="c-mv__button --main js-area-btn" id="js-area-btn">
+            <div class="c-mv__button-inner">
+              <a href="#">希望の <br> <span>エリア </span>から<br>プランナーを探す</a>
+            </div><!-- /.c-mv__button-inner -->
+          </button><!-- /.c-mv__button -->
+        </div><!-- /.c-mv__button-wrap -->
+      
       </section>
 
+      <section class="l-section p-recent">
+        <div class="l-inner">
+       <h2 class="c-heading-l1 is-active "><span>Recent Planner and Reports</span><span class="c-head__ja">最近見たレポートとプランナー</span></h2><!-- /.c-heading-l1 -->
+
+       <p class="c-heading-l2 --mt64 is-active"><span>Planner</span> <span class="c-heading__ja">プランナー</span></p><!-- /.c-heading-l2 -->
+
+      <div class="l-recent-top">
+        <div class="l-swiper__wrap">
+          <div class="recent-top__swiper-container">
+            <div class="swiper recent-top__swiper">
+              <div class="swiper-wrapper recent-top__swiper-wrapper">
+                <div class="swiper-slide recent-top__swiper-slide">
+                  <div class="c-planner__item">
+                    <div class="c-plnner__icon"><img src="./assets/img/star.svg" alt=""></div><!-- /.c-plnner__icon -->
+                    <div class="c-planner__image">
+                      <img src="./assets/img/rank-7.jpg" alt="">
+                    </div><!-- /.c-planner__image -->
+                    <div class="c-planner__text-wrap">
+                      <p class="c-planner__name">佐々木 結</p><!-- /.c-planner__name -->
+                      <p class="c-planner__job">オリオンウェディング</p><!-- /.c-planner__job -->
+                      <div class="c-planner__bottom-wrap">
+                        <div class="c-tag__area">エリア
+                        </div><!-- /.c-tag__area -->
+                        <ul class="c-loc-wrap">
+                          <li>東京</li>
+                          <li>神奈川</li>
+                          <li>千葉</li>
+                          <li>埼玉</li>
+                          <li>長野</li>
+                          <li>愛知</li>
+                          <li>岡山</li>
+                          <li>大阪</li>
+                          <li>広島</li>
+                          <li>福岡</li>
+                          <li>沖縄</li>
+                          <li>海外</li>
+                          
+                        </ul><!-- /.c-loc-wrap -->
+                      </div><!-- /.c-planner__bottom-wrap -->
+                    </div><!-- /.c-planner__text-wrap -->
+                  </div><!-- /.c-planner-item -->
+                </div>
+
+                <div class="swiper-slide recent-top__swiper-slide">
+                  <div class="c-planner__item">
+                    <div class="c-plnner__icon"><img src="./assets/img/star.svg" alt=""></div><!-- /.c-plnner__icon -->
+                    <div class="c-planner__image">
+                      <img src="./assets/img/planner-2.jpg" alt="">
+                    </div><!-- /.c-planner__image -->
+                    <div class="c-planner__text-wrap">
+                      <p class="c-planner__name">鈴木 直子</p><!-- /.c-planner__name -->
+                      <p class="c-planner__job">Orange wedding</p><!-- /.c-planner__job -->
+                      <div class="c-planner__bottom-wrap">
+                        <div class="c-tag__area">エリア
+                        </div><!-- /.c-tag__area -->
+                        <ul class="c-loc-wrap">
+                          <li>東京</li>
+                          <li>神奈川</li>
+                          <li>千葉</li>
+                          <li>埼玉</li>
+                          <li>長野</li>
+                          <li>愛知</li>
+                          <li>岡山</li>
+                          <li>大阪</li>
+                          <li>広島</li>
+                          <li>福岡</li>
+                          <li>沖縄</li>
+                          <li>海外</li>
+                          
+                        </ul><!-- /.c-loc-wrap -->
+                      </div><!-- /.c-planner__bottom-wrap -->
+                    </div><!-- /.c-planner__text-wrap -->
+                  </div><!-- /.c-planner-item -->
+                </div>
+
+                <div class="swiper-slide recent-top__swiper-slide">
+                  <div class="c-planner__item">
+                    <div class="c-plnner__icon"><img src="./assets/img/star.svg" alt=""></div><!-- /.c-plnner__icon -->
+                    <div class="c-planner__image">
+                      <img src="./assets/img/planner-1.jpg" alt="">
+                    </div><!-- /.c-planner__image -->
+                    <div class="c-planner__text-wrap">
+                      <p class="c-planner__name">加藤美玲</p><!-- /.c-planner__name -->
+                      <p class="c-planner__job">株式会社best wedding</p><!-- /.c-planner__job -->
+                      <div class="c-planner__bottom-wrap">
+                        <div class="c-tag__area">エリア
+                        </div><!-- /.c-tag__area -->
+                        <ul class="c-loc-wrap">
+                          <li>東京</li>
+                          <li>神奈川</li>
+                          <li>千葉</li>
+                          <li>埼玉</li>
+                          <li>長野</li>
+                          <li>愛知</li>
+                          <li>岡山</li>
+                          <li>大阪</li>
+                          <li>広島</li>
+                          <li>福岡</li>
+                          <li>沖縄</li>
+                          <li>海外</li>
+                          
+                        </ul><!-- /.c-loc-wrap -->
+                      </div><!-- /.c-planner__bottom-wrap -->
+                    </div><!-- /.c-planner__text-wrap -->
+                  </div><!-- /.c-planner-item -->
+                </div>
+
+                <div class="swiper-slide recent-top__swiper-slide">
+                  <div class="c-planner__item">
+                    <div class="c-plnner__icon"><img src="./assets/img/star.svg" alt=""></div><!-- /.c-plnner__icon -->
+                    <div class="c-planner__image">
+                      <img src="./assets/img/rank-7.jpg" alt="">
+                    </div><!-- /.c-planner__image -->
+                    <div class="c-planner__text-wrap">
+                      <p class="c-planner__name">佐々木 結</p><!-- /.c-planner__name -->
+                      <p class="c-planner__job">オリオンウェディング</p><!-- /.c-planner__job -->
+                      <div class="c-planner__bottom-wrap">
+                        <div class="c-tag__area">エリア
+                        </div><!-- /.c-tag__area -->
+                        <ul class="c-loc-wrap">
+                          <li>東京</li>
+                          <li>神奈川</li>
+                          <li>千葉</li>
+                          <li>埼玉</li>
+                          <li>長野</li>
+                          <li>愛知</li>
+                          <li>岡山</li>
+                          <li>大阪</li>
+                          <li>広島</li>
+                          <li>福岡</li>
+                          <li>沖縄</li>
+                          <li>海外</li>
+                          
+                        </ul><!-- /.c-loc-wrap -->
+                      </div><!-- /.c-planner__bottom-wrap -->
+                    </div><!-- /.c-planner__text-wrap -->
+                  </div><!-- /.c-planner-item -->
+                </div>
+
+                <div class="swiper-slide recent-top__swiper-slide">
+                  <div class="c-planner__item">
+                    <div class="c-plnner__icon"><img src="./assets/img/star.svg" alt=""></div><!-- /.c-plnner__icon -->
+                    <div class="c-planner__image">
+                      <img src="./assets/img/planner-2.jpg" alt="">
+                    </div><!-- /.c-planner__image -->
+                    <div class="c-planner__text-wrap">
+                      <p class="c-planner__name">鈴木 直子</p><!-- /.c-planner__name -->
+                      <p class="c-planner__job">Orange wedding</p><!-- /.c-planner__job -->
+                      <div class="c-planner__bottom-wrap">
+                        <div class="c-tag__area">エリア
+                        </div><!-- /.c-tag__area -->
+                        <ul class="c-loc-wrap">
+                          <li>東京</li>
+                          <li>神奈川</li>
+                          <li>千葉</li>
+                          <li>埼玉</li>
+                          <li>長野</li>
+                          <li>愛知</li>
+                          <li>岡山</li>
+                          <li>大阪</li>
+                          <li>広島</li>
+                          <li>福岡</li>
+                          <li>沖縄</li>
+                          <li>海外</li>
+                          
+                        </ul><!-- /.c-loc-wrap -->
+                      </div><!-- /.c-planner__bottom-wrap -->
+                    </div><!-- /.c-planner__text-wrap -->
+                  </div><!-- /.c-planner-item -->
+                </div>
+              </div>
+            </div>
+           
+            <div class="swiper-button-prev recent-top__swiper-button-prev"></div>
+            <div class="swiper-button-next recent-top__swiper-button-next"></div>
+          </div>
+        </div><!-- /.swiper__container -->
+      </div><!-- /.l-recent-top -->
+
+      <div class="l-recent-bottom">
+
+      <p class="c-heading-l2"><span>Report</span> <span class="c-heading__ja">レポート</span></p><!-- /.c-heading-l2 -->
+
+      <div class="l-swiper__wrap">
+        <div class="recent-bottom__swiper-container">
+          <div class="swiper recent-bottom__swiper">
+            <div class="swiper-wrapper recent-bottom__swiper-wrapper">
+            
+                <div class="swiper-slide recent-bottom__swiper-slide">
+                  <div class="c-report__item">
+                    <div class="c-report__icon"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                    <div class="c-report__image">
+                      <img src="./assets/img/report-3.jpg" alt="">
+                    </div><!-- /.c-planner__image -->
+                   
+                    <div class="c-report__text-wrap">
+                      <p class="c-report__title">緑に囲まれたナチュラルガーデンウェディング</p>
+                    
+                      
+                      <div class="c-report__bottom-wrap">
+                        <p class="c-report__site">リゾート・ビーチ・アウトドアウェディング</p><!-- /.c-planner__name -->
+                        <div class="c-tag__list">
+                        <div class="c-tag__area">エリア
+                        </div><!-- /.c-tag__area -->
+                        <ul class="c-loc-wrap">
+                          <li>軽井沢</li>
+                          </ul><!-- /.c-loc-wrap -->
+                        </div><!-- /.c-tag-wrap -->
+                        <ul class="c-tag__wrap">
+                          <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃フォトウェディング</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃軽井沢</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃家族婚</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃アウトドアウェディング</span></li><!-- /.c-tag__item -->
+                        </ul><!-- /.c-tag-wrap -->
+                      </div><!-- /.c-planner__bottom-wrap -->
+
+                      
+                    </div><!-- /.c-planner__text-wrap -->
+                    
+                  </div><!-- /.c-planner-item -->
+                </div>
+
+                <div class="swiper-slide recent-bottom__swiper-slide">
+                  <div class="c-report__item">
+                    <div class="c-report__icon"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                    <div class="c-report__image">
+                      <img src="./assets/img/new-2.jpg" alt="">
+                    </div><!-- /.c-planner__image -->
+                   
+                    <div class="c-report__text-wrap">
+                      <p class="c-report__title">美しい紅葉と和装フォトウェディング</p>
+                    
+                      
+                      <div class="c-report__bottom-wrap">
+                        <p class="c-report__site --orange">フォトウェディング</p><!-- /.c-planner__name -->
+                        <div class="c-tag__list">
+                        <div class="c-tag__area">エリア
+                        </div><!-- /.c-tag__area -->
+                        <ul class="c-loc-wrap">
+                          <li>関東</li>
+                          </ul><!-- /.c-loc-wrap -->
+                        </div><!-- /.c-tag-wrap -->
+                        <ul class="c-tag__wrap">
+                          <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃フォトウェディング</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃家族婚</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃アウトドアウェディング</span></li><!-- /.c-tag__item -->
+                        </ul><!-- /.c-tag-wrap -->
+                      </div><!-- /.c-planner__bottom-wrap -->
+
+                      
+                    </div><!-- /.c-planner__text-wrap -->
+                 
+                  </div><!-- /.c-planner-item -->
+                </div>
+
+                <div class="swiper-slide recent-bottom__swiper-slide">
+                  <div class="c-report__item">
+                    <div class="c-report__icon"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                    <div class="c-report__image">
+                      <img src="./assets/img/report-5.jpg" alt="">
+                    </div><!-- /.c-planner__image -->
+                   
+                    <div class="c-report__text-wrap">
+                      <p class="c-report__title">フォトウェディング</p>
+                    
+                      
+                      <div class="c-report__bottom-wrap">
+                        <p class="c-report__site --orang">フォトウェディング</p><!-- /.c-planner__name -->
+                        <div class="c-tag__list">
+                        <div class="c-tag__area">エリア
+                        </div><!-- /.c-tag__area -->
+                        <ul class="c-loc-wrap">
+                          <li>関東</li>
+                          </ul><!-- /.c-loc-wrap -->
+                        </div><!-- /.c-tag-wrap -->
+                        <ul class="c-tag__wrap">
+                          <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃フォトウェディング</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃家族婚</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃アウトドアウェディング</span></li><!-- /.c-tag__item -->
+                        </ul><!-- /.c-tag-wrap -->
+                      </div><!-- /.c-planner__bottom-wrap -->
+
+                      
+                    </div><!-- /.c-planner__text-wrap -->
+                   
+                  </div><!-- /.c-planner-item -->
+                </div>
+
+                <div class="swiper-slide recent-bottom__swiper-slide">
+                  <div class="c-report__item">
+                    <div class="c-report__icon"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                    <div class="c-report__image">
+                      <img src="./assets/img/new-3.jpg" alt="">
+                    </div><!-- /.c-planner__image -->
+                   
+                    <div class="c-report__text-wrap">
+                      <p class="c-report__title">ペットと一緒に思い出の石垣島で叶えるウェディング</p>
+                    
+                      
+                      <div class="c-report__bottom-wrap">
+                        <p class="c-report__site">リゾート・ビーチ・アウトドアウェディング</p><!-- /.c-planner__name -->
+                        <div class="c-tag__list">
+                        <div class="c-tag__area">エリア
+                        </div><!-- /.c-tag__area -->
+                        <ul class="c-loc-wrap">
+                          <li>軽井沢</li>
+                          </ul><!-- /.c-loc-wrap -->
+                        </div><!-- /.c-tag-wrap -->
+                        <ul class="c-tag__wrap">
+                          <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃フォトウェディング</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃軽井沢</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃家族婚</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃アウトドアウェディング</span></li><!-- /.c-tag__item -->
+                        </ul><!-- /.c-tag-wrap -->
+                      </div><!-- /.c-planner__bottom-wrap -->
+
+                      
+                    </div><!-- /.c-planner__text-wrap -->
+                  
+                  </div><!-- /.c-planner-item -->
+                </div>
+
+                <div class="swiper-slide recent-bottom__swiper-slide">
+                  <div class="c-report__item">
+                    <div class="c-report__icon"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                    <div class="c-report__image">
+                      <img src="./assets/img/report-7.png" alt="">
+                    </div><!-- /.c-planner__image -->
+                   
+                    <div class="c-report__text-wrap">
+                      <p class="c-report__title">緑に囲まれたナチュラルガーデンウェディング</p>
+                    
+                      
+                      <div class="c-report__bottom-wrap">
+                        <p class="c-report__site">リゾート・ビーチ・アウトドアウェディング</p><!-- /.c-planner__name -->
+                        <div class="c-tag__list">
+                        <div class="c-tag__area">エリア
+                        </div><!-- /.c-tag__area -->
+                        <ul class="c-loc-wrap">
+                          <li>軽井沢</li>
+                          </ul><!-- /.c-loc-wrap -->
+                        </div><!-- /.c-tag-wrap -->
+                        <ul class="c-tag__wrap">
+                          <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃フォトウェディング</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃軽井沢</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃家族婚</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃アウトドアウェディング</span></li><!-- /.c-tag__item -->
+                        </ul><!-- /.c-tag-wrap -->
+                      </div><!-- /.c-planner__bottom-wrap -->
+
+                      
+                    </div><!-- /.c-planner__text-wrap -->
+                   
+                  </div><!-- /.c-planner-item -->
+                </div>
+
+              </div>
+            </div>
+          </div>
+   
+          <div class="swiper-button-prev recent-bottom__swiper-button-prev"></div>
+          <div class="swiper-button-next recent-bottom__swiper-button-next"></div>
+        </div>
+
+      </div>
+      </div>
+   
+      </section>
+
+      <section class="l-section p-best-planner">
+        <div class="l-inner">
+          <h2 class="c-heading-l1"> <span>What’s Best Planner ?</span><span class="c-head__ja">ベストプランナーとは</span></h2><!-- /.c-heading-l1 -->
+
+          <div class="l-best-planner__container">
+            <div class="p-best-planner__bg"><img src="./assets/img/logo_bg.png" alt=""></div><!-- /.p-best-planner__bg -->
+
+            <h3 class="p-best-planner__title animated__slideShow">
+              <span>結</span> 婚式を創るのはヒト。<br>
+              ふたりの理想の結婚式を一緒に創ってくれる<br class="pc-only">
+              ヒトから探しませんか
+            </h3><!-- /.p-best-planner__title -->
+
+            <div class="p-best-planner__bottom">
+              <div class="p-best-planner_txt">
+              <p class="p-best-planner__text animated__slideUp">ふたりの理想を叶えてくれるプランナーを </p><br>
+              <p class="p-best-planner__text animated__slideUp"> 自分達の目で見てお願いしたい。</p><br>
+              <p class="p-best-planner__text animated__slideUp">海外では当たり前のことが、日本では式場からが基本になっています。</p><!-- /.p-best-planner__text -->
+              </div><!-- /.p-best-planner_txt -->
+              <div class="p-best-planner_txt">
+              <p class="p-best-planner__text animated__slideUp">ふたりの希望に寄り添い、しっかり受け止めて、</p> <br class="pc-only">
+              <p class="p-best-planner__text animated__slideUp"> 親身に叶えようとしてくれるプランナーがいます。</p><!-- /.p-best-planner__text -->
+                </div>
+                <div class="p-best-planner_txt">
+              <p class="p-best-planner__text animated__slideUp">そして、</p><br class="pc-only">
+                <p class="p-best-planner__text animated__slideUp">「自分たちにとって最高の結婚式だった！」</p><br>
+                <p class="p-best-planner__text animated__slideUp">「この方にお願いして本当に良かった！」</p><br>
+                <p class="p-best-planner__text animated__slideUp"> こんな声を増やしていきたいと思っています。</p><!-- /.p-best-planner__text -->
+                </div>
+            </div><!-- /.p-best-planner__bottom -->
+          </div><!-- /.l-best-planner__container -->
+
+          <div class="p-best-planner__btn-wrap">
+            <p class="c-head__l3">初めてご利用される方へ</p><!-- /.c-head__l3 -->
+            <button class="c-primary__btn"><a href="">ベストプランナーの使い方をみる</a></button><!-- /.c-primary__btn -->
+          </div><!-- /.p-best-planner__btn-wrap -->
+
+          <div class="c-best-planner_swipe">
+              <div class="best-planner__swiper-container">
+                <div class="swiper best-planner__swiper">
+                  <div class="swiper-wrapper best-planner__swiper-wrapper">
+                    <div class="swiper-slide best-planner__swiper-slide">
+                      <img src="./assets/img/planner-2.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide best-planner__swiper-slide">
+                      <img src="./assets/img/planner-1.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide best-planner__swiper-slide">
+                      <img src="./assets/img/rank-3.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide best-planner__swiper-slide">
+                      <img src="./assets/img/planner-5.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide best-planner__swiper-slide">
+                      <img src="./assets/img/planner-6.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide best-planner__swiper-slide">
+                      <img src="./assets/img/planner-2.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide best-planner__swiper-slide">
+                      <img src="./assets/img/planner-1.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide best-planner__swiper-slide">
+                      <img src="./assets/img/rank-3.jpg" alt="">
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+          </div><!-- /.c-best-planner_swipe -->
+
+
+
+        </div><!-- /.l-inner -->
+      </section><!-- /.l-section p-best-planner -->
+
+      <section class="l-section p-reccomend">
+        <div class="l-inner">
+          <h2 class="c-heading-l1"><span>Reccomend Plan</span><span class="c-head__ja">おすすめのプランからプランナーを探す</span></h2><!-- /.c-heading-l1 -->
+
+          <div class="l-reccomend__container">
+            <div class="c-reccomend__item  --pink">
+               <div class="c-reccomend__image">
+                <img src="./assets/img/new-4.jpg" alt="">
+              </div><!-- /.c-planner__image -->
+              <div class="c-reccomend__text-wrap">
+                <p class="c-reccomend__text">国内 <br>
+                  挙式・披露宴</p><!-- /.c-reccomend__text -->
+                  <div class="c-reccomend__arrow"><img src="./assets/img/arrow.svg" alt=""></div>
+              </div><!-- /.c-planner__text-wrap -->
+            </div><!-- /.c-planner-item -->
+
+            <div class="c-reccomend__item --blue">
+              <div class="c-reccomend__image">
+               <img src="./assets/img/report-2.jpg" alt="">
+             </div><!-- /.c-planner__image -->
+             <div class="c-reccomend__text-wrap">
+               <p class="c-reccomend__text">国内 <br>
+                 挙式・披露宴</p><!-- /.c-reccomend__text -->
+                 <div class="c-reccomend__arrow"><img src="./assets/img/arrow.svg" alt=""></div>
+             </div><!-- /.c-planner__text-wrap -->
+           </div><!-- /.c-planner-item -->
+
+           <div class="c-reccomend__item --orange">
+            <div class="c-reccomend__image">
+             <img src="./assets/img/report-3.jpg" alt="">
+           </div><!-- /.c-planner__image -->
+           <div class="c-reccomend__text-wrap">
+             <p class="c-reccomend__text">国内 <br>
+               挙式・披露宴</p><!-- /.c-reccomend__text -->
+               <div class="c-reccomend__arrow"><img src="./assets/img/arrow.svg" alt=""></div>
+           </div><!-- /.c-planner__text-wrap -->
+         </div><!-- /.c-planner-item -->
+
+         <div class="c-reccomend__item --bage">
+          <div class="c-reccomend__image">
+           <img src="./assets/img/report-4.jpg" alt="">
+         </div><!-- /.c-planner__image -->
+         <div class="c-reccomend__text-wrap">
+           <p class="c-reccomend__text">国内 <br>
+             挙式・披露宴</p><!-- /.c-reccomend__text -->
+             <div class="c-reccomend__arrow"><img src="./assets/img/arrow.svg" alt=""></div>
+         </div><!-- /.c-planner__text-wrap -->
+       </div><!-- /.c-planner-item -->
+
+       <div class="c-reccomend__item --green">
+        <div class="c-reccomend__image">
+         <img src="./assets/img/report-5.jpg" alt="">
+       </div><!-- /.c-planner__image -->
+       <div class="c-reccomend__text-wrap">
+         <p class="c-reccomend__text">国内 <br>
+           挙式・披露宴</p><!-- /.c-reccomend__text -->
+           <div class="c-reccomend__arrow"><img src="./assets/img/arrow.svg" alt=""></div>
+       </div><!-- /.c-planner__text-wrap -->
+     </div><!-- /.c-planner-item -->
+          </div><!-- / -->
+
+          </div>
+          </section>
+
+    <section class="l-section p-popular">
+      <div class="l-inner">
+
+        <h2 class="c-heading-l1"><span>Populer Reports</span><span class="c-head__ja">人気のウェディングレポート</span></h2><!-- /.c-heading-l1 -->
+        <div class="l-inner l-inner__narrow">
+         <p class="c-heading-l2 --mt64"><span> Ranking</span> <span class="c-heading__ja">人気レポートランキング</span></p><!-- /.c-heading-l2 -->
+        
+        
+         
+          <div class="popular__swiper-container">
+            <div class="swiper popular__swiper">
+              <div class="swiper-wrapper popular__swiper-wrapper l-popular__grid">
+                <div class="swiper-slide popular__swiper-slide ">
+                  <div class="c-popular__card">
+                    <p class="c-voice__flag --lf-2"><span>No.</span>01</p><!-- /.c-voice__flag -->
+                    <div class="c-report__icon"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                    <div class="c-popular__card-top">
+                      <div class="c-popular__card-image">
+                        <img src="./assets/img/rank-1.jpg" alt="">
+                      </div><!-- / -->
+                      <div class="c-popular__card-textWrap">
+                        <h3 class="c-popular__card-copy">ペットと一緒に思い出の石垣島で叶えるウェディング</h3><!-- /.c-card__coopy -->
+                        <div class="c-popular__bottom-wrap">
+                          <p class="c-popular__site">リゾート・ビーチ・アウトドアウェディング</p><!-- /.c-planner__name -->
+                          <div class="c-tag__list">
+                          <div class="c-tag__area">エリア
+                          </div><!-- /.c-tag__area -->
+                          <ul class="c-loc-wrap">
+                            <li>沖縄</li>
+                            </ul><!-- /.c-loc-wrap -->
+                          </div><!-- /.c-tag-wrap -->
+                          <ul class="c-tag__wrap">
+                            <li class="c-tag__item"><span>＃沖縄リゾートウェディング</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃家族婚</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃１.５次会</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃アウトドアウェディング</span></li><!-- /.c-tag__item -->
+                          </ul><!-- /.c-tag-wrap -->
+                        </div><!-- /.c-planner__bottom-wrap -->
+                      </div><!-- / -->
+                    </div><!-- / -->
+        
+                      <div class="c-poplar__card-bottom">
+                        <p class="c-poplar__card-title">出会ってからずっと一緒だった愛犬と初めての旅行で訪れた石垣島でのウェディング。</p><!-- / -->
+                        <p class="c-poplar__card-text">レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。<br>
+                          レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。</p><!-- / -->
+                        <div class="c-poplar__card-list">
+                          <div class="c-small__container">
+                            <div class="c-small__image"><img src="./assets/img/planner-1.jpg" alt=""></div><!-- /.p-small__image -->
+                            <div class="c-small__text-wrap">
+                              <p class="c-small__job">担当プランナー</p><!-- /.p-small-job -->
+                              <p class="c-small__name">鈴木 咲</p><!-- /.p-small__name -->
+                              <p class="c-small__comp">株式会社p-wedding</p><!-- /.p-small__comp -->
+                            </div><!-- /.p-small__text-wrap -->
+                          </div><!-- /.p-small__container -->
+        
+                          <button class="c-read__btn --right-11"><a>Read more</a> </button><!-- /.c-read__btn -->
+                        </div><!-- / -->
+                      </div><!-- /.p-poplar__card-bottom -->
+                   
+                  </div><!-- /.p-popular__card -->
+                </div>
+
+                <div class="swiper-slide popular__swiper-slide">
+                  <div class="c-popular__card">
+                    <p class="c-voice__flag --lf-2"><span>No.</span>02</p><!-- /.c-voice__flag -->
+                    <div class="c-report__icon"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                    <div class="c-popular__card-top">
+                      <div class="c-popular__card-image">
+                        <img src="./assets/img/report-6.jpg" alt="">
+                      </div><!-- / -->
+                      <div class="c-popular__card-textWrap">
+                        <h3 class="c-popular__card-copy">大好きなペットと一緒に <br>
+                          ガーデンウェディング</h3><!-- /.c-card__coopy -->
+                        <div class="c-popular__bottom-wrap">
+                          <p class="c-popular__site --pink">国内挙式・披露宴</p><!-- /.c-planner__name -->
+                          <div class="c-tag__list">
+                          <div class="c-tag__area">エリア
+                          </div><!-- /.c-tag__area -->
+                          <ul class="c-loc-wrap">
+                            <li>関東</li>
+                            </ul><!-- /.c-loc-wrap -->
+                          </div><!-- /.c-tag-wrap -->
+                          <ul class="c-tag__wrap">
+                            <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃披露宴</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃挙式</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃家族婚</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃レストラン</span></li><!-- /.c-tag__item -->
+                          </ul><!-- /.c-tag-wrap -->
+                        </div><!-- /.c-planner__bottom-wrap -->
+                      </div><!-- / -->
+                    </div><!-- / -->
+        
+                      <div class="c-poplar__card-bottom">
+                        <p class="c-poplar__card-title">緑に囲まれたガーデンで出会ってからずっと一緒だった愛犬と叶えたウェディングパーティ。</p><!-- / -->
+                        <p class="c-poplar__card-text">レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。
+                          レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。</p><!-- / -->
+                        <div class="c-poplar__card-list">
+                          <div class="c-small__container">
+                            <div class="c-small__image"><img src="./assets/img/planner-2.jpg" alt=""></div><!-- /.p-small__image -->
+                            <div class="c-small__text-wrap">
+                              <p class="c-small__job">担当プランナー</p><!-- /.p-small-job -->
+                              <p class="c-small__name">鈴木 直子</p><!-- /.p-small__name -->
+                              <p class="c-small__comp">株式会社Orange wedding</p><!-- /.p-small__comp -->
+                            </div><!-- /.p-small__text-wrap -->
+                          </div><!-- /.p-small__container -->
+        
+                          <button class="c-read__btn"><a href="">Read more</a></button><!-- /.c-read__btn -->
+                        </div><!-- / -->
+                      </div><!-- /.p-poplar__card-bottom -->
+                   
+                  </div><!-- /.p-popular__card -->
+                  </div>
+
+                   <div class="swiper-slide popular__swiper-slide">
+                    <div class="c-popular__card">
+                      <p class="c-voice__flag --lf-2"><span>No.</span>03</p><!-- /.c-voice__flag -->
+                      <div class="c-report__icon --p-card"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                      <div class="c-popular__card-top">
+                        <div class="c-popular__card-image">
+                          <img src="./assets/img/card-7.jpg" alt="">
+                        </div><!-- / -->
+                        <div class="c-popular__card-textWrap">
+                          <h3 class="c-popular__card-copy">最高のロケーションで <br>
+                            フォトウェディング</h3><!-- /.c-card__coopy -->
+                          <div class="c-popular__bottom-wrap">
+                            <p class="c-popular__site">フォトウェディング</p><!-- /.c-planner__name -->
+                            <div class="c-tag__list">
+                            <div class="c-tag__area">エリア
+                            </div><!-- /.c-tag__area -->
+                            <ul class="c-loc-wrap">
+                              <li>沖縄</li>
+                              </ul><!-- /.c-loc-wrap -->
+                            </div><!-- /.c-tag-wrap -->
+                            <ul class="c-tag__wrap">
+                              <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                              <li class="c-tag__item"><span>＃披露宴</span></li><!-- /.c-tag__item -->
+                              <li class="c-tag__item"><span>＃挙式</span></li><!-- /.c-tag__item -->
+                              <li class="c-tag__item"><span>＃家族婚</span></li><!-- /.c-tag__item -->
+                              <li class="c-tag__item"><span>＃レストラン</span></li><!-- /.c-tag__item -->
+                            </ul><!-- /.c-tag-wrap -->
+                          </div><!-- /.c-planner__bottom-wrap -->
+                        </div><!-- / -->
+                      </div><!-- / -->
+          
+                        <div class="c-poplar__card-bottom">
+                          <p class="c-poplar__card-title">大好きな地元の夕暮れで幻想的なウェディングフォト。</p><!-- / -->
+                          <p class="c-poplar__card-text">レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。
+                            レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。レポート本文が入ります。</p><!-- / -->
+                          <div class="c-poplar__card-list">
+                            <div class="c-small__container">
+                              <div class="c-small__image"><img src="./assets/img/rank-3.jpg" alt=""></div><!-- /.p-small__image -->
+                              <div class="c-small__text-wrap">
+                                <p class="c-small__job">担当プランナー</p><!-- /.p-small-job -->
+                                <p class="c-small__name">加藤 結</p><!-- /.p-small__name -->
+                                <p class="c-small__comp">honey wedding</p><!-- /.p-small__comp -->
+                              </div><!-- /.p-small__text-wrap -->
+                            </div><!-- /.p-small__container -->
+          
+                            <button class="c-read__btn"><a href="">Read more</a></button><!-- /.c-read__btn -->
+                          </div><!-- / -->
+                        </div><!-- /.p-poplar__card-bottom -->
+                     
+                    </div><!-- /.p-popular__card -->
+                   </div>
+              </div>
+            </div>
+          
+            <div class="swiper-button-prev popular-button-prev"></div>
+            <div class="swiper-button-next popular-button-next"></div>
+          </div>
+          
+      
+
+         <button class="c-main__btn"><a href="">人気レポートランキングをもっとみる</a></button><!-- /.c-main__btn -->
+         </div>
+
+         <div class="p-plan__section">
+          <p class="c-heading-l2 --mt64"> <span>Reports By Plan</span> <span class="c-heading__ja">プラン別人気レポート</span></p><!-- /.c-heading-l2 -->
+
+          <div class="p-plan__block">
+            <div class="l-plan__area-container">
+              <div class="c-plan__area">
+                <h3 class="c-heading-l4 --pink">国内挙式・披露宴</h3><!-- /.c-heading-l4 -->
+
+                <div class="c-plan__card">
+                  
+                    <div class="c-plan__card-image">
+                      <div class="c-report__icon --p-card"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                      <img src="./assets/img/wedding-1.jpg" alt="">
+                    </div><!-- / -->
+                    <div class="c-plan__card-textWrap">
+                      <h3 class="c-plan__card-copy">100名のゲストに囲まれた <br>
+                        2年越しの結婚式</h3><!-- /.c-card__coopy -->
+                      <div class="c-plan__bottom-wrap">
+                        <div class="c-tag__list">
+                        <div class="c-tag__area">エリア </div><!-- /.c-tag__area -->
+                        <ul class="c-loc-wrap">
+                          <li>関東</li>
+                          </ul><!-- /.c-loc-wrap -->
+                        </div><!-- /.c-tag-wrap -->
+                        <ul class="c-tag__wrap">
+                          <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃フォトウェディング</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃前撮り</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃和婚</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃前撮り</span></li><!-- /.c-tag__item -->
+                        </ul><!-- /.c-tag-wrap -->
+                      </div><!-- /.c-planner__bottom-wrap -->
+
+                      <div class="c-small__container">
+                        <div class="c-small__image"><img src="./assets/img/planner-2.jpg" alt=""></div><!-- /.p-small__image -->
+                        <div class="c-small__text-wrap">
+                          <p class="c-small__job">担当プランナー</p><!-- /.p-small-job -->
+                          <p class="c-small__name">加藤 美玲</p><!-- /.p-small__name -->
+                          <p class="c-small__comp">株式会社best wedding</p><!-- /.p-small__comp -->
+                        </div><!-- /.p-small__text-wrap -->
+                      </div><!-- /.p-small__container -->
+                      <button class="c-read__btn  --mt-auto"><a href="">Read more</a></button><!-- /.c-read__btn -->
+                    </div><!-- / -->
+                  </div><!-- / -->
+                  </div>
+
+                  <div class="c-plan__area">
+                    <h3 class="c-heading-l4 --orange">フォトウェディング</h3><!-- /.c-heading-l4 -->
+
+                  <div class="c-plan__card">
+                  
+                    <div class="c-plan__card-image">
+                      <div class="c-report__icon --p-card"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                      <img src="./assets/img/wedding-2.jpg" alt="">
+                    </div><!-- / -->
+                    <div class="c-plan__card-textWrap">
+                      <h3 class="c-plan__card-copy">ふたりの地元の豊川稲荷でフォトウェディング</h3><!-- /.c-card__coopy -->
+                      <div class="c-plan__bottom-wrap">
+                        <div class="c-tag__list">
+                        <div class="c-tag__area">エリア </div><!-- /.c-tag__area -->
+                        <ul class="c-loc-wrap">
+                          <li>東海</li>
+                          </ul><!-- /.c-loc-wrap -->
+                        </div><!-- /.c-tag-wrap -->
+                        <ul class="c-tag__wrap">
+                          <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃フォトウェディング</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃前撮り</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃和婚</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃前撮り</span></li><!-- /.c-tag__item -->
+                        </ul><!-- /.c-tag-wrap -->
+                      </div><!-- /.c-planner__bottom-wrap -->
+
+                      <div class="c-small__container">
+                        <div class="c-small__image"><img src="./assets/img/planner-1.jpg" alt=""></div><!-- /.p-small__image -->
+                        <div class="c-small__text-wrap">
+                          <p class="c-small__job">担当プランナー</p><!-- /.p-small-job -->
+                          <p class="c-small__name">佐々木 結</p><!-- /.p-small__name -->
+                          <p class="c-small__comp">オリオンウェディング</p><!-- /.p-small__comp -->
+                        </div><!-- /.p-small__text-wrap -->
+                      </div><!-- /.p-small__container -->
+                      <button class="c-read__btn  --mt-auto"><a href="">Read more</a></button><!-- /.c-read__btn -->
+                    </div><!-- / -->
+                  </div><!-- / -->
+                  </div>
+
+                  <div class="c-plan__area">
+                    <h3 class="c-heading-l4 --green">リゾート・アウトドア・ <br>ビーチウェディング</h3><!-- /.c-heading-l4 -->
+
+                  <div class="c-plan__card">
+                  
+                    <div class="c-plan__card-image">
+                      <div class="c-report__icon --p-card"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                      <img src="./assets/img/wedding-3.jpg" alt="">
+                    </div><!-- / -->
+                    <div class="c-plan__card-textWrap">
+                      <h3 class="c-plan__card-copy">唯一無二の水中ウェディング <br>
+                        幻想的な沖縄の海で</h3><!-- /.c-card__coopy -->
+                      <div class="c-plan__bottom-wrap">
+                        <div class="c-tag__list">
+                        <div class="c-tag__area">エリア </div><!-- /.c-tag__area -->
+                        <ul class="c-loc-wrap">
+                          <li>沖縄</li>
+                          </ul><!-- /.c-loc-wrap -->
+                        </div><!-- /.c-tag-wrap -->
+                        <ul class="c-tag__wrap">
+                          <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃フォトウェディング</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃前撮り</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃和婚</span></li><!-- /.c-tag__item -->
+                          <li class="c-tag__item"><span>＃前撮り</span></li><!-- /.c-tag__item -->
+                        </ul><!-- /.c-tag-wrap -->
+                      </div><!-- /.c-planner__bottom-wrap -->
+
+                      <div class="c-small__container">
+                        <div class="c-small__image"><img src="./assets/img/rank-3.jpg" alt=""></div><!-- /.p-small__image -->
+                        <div class="c-small__text-wrap">
+                          <p class="c-small__job">担当プランナー</p><!-- /.p-small-job -->
+                          <p class="c-small__name">鈴木 咲</p><!-- /.p-small__name -->
+                          <p class="c-small__comp">株式会社p-wedding</p><!-- /.p-small__comp -->
+                        </div><!-- /.p-small__text-wrap -->
+                      </div><!-- /.p-small__container -->
+                      <button class="c-read__btn  --mt-auto"><a href="">Read more</a></button><!-- /.c-read__btn -->
+                    </div><!-- / -->
+                  </div><!-- / -->
+                   </div><!-- /.p-poplar__card-bottom -->
+                 </div><!-- /.p-popular__card -->
+
+               
+              </div><!-- /.c-plan_area -->
+              <button class="c-main__btn"><a href="">プラン別人気レポートを <br class="sp-only">
+                もっとみる</a></button><!-- /.c-main__btn -->
+          </div><!-- /.p-plan__block -->
+
+          <p class="c-heading-l2 --mt64"><span>Reports By Plan</span> <span class="c-heading__ja">プラン別人気レポート</span></p><!-- /.c-heading-l2 -->
+
+          <div class="l-plan__swipe-container">
+
+            <div class="p-plan__swipe__swiper-container">
+              <div class="swiper plan__swipe__swiper">
+                <div class="swiper-wrapper plan__swipe__swiper-wrapper">
+                  <div class="swiper-slide plan__swipe__swiper-slide">
+                    <div class="c-plan__card">
+                       <div class="c-plan__card-image">
+                        <div class="c-report__icon --p-card"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                        <img src="./assets/img/wedding-3.jpg" alt="">
+                      </div><!-- / -->
+                      <div class="c-plan__card-textWrap">
+                        <h3 class="c-plan__card-copy">唯一無二の水中ウェディング <br>
+                          幻想的な沖縄の海で</h3><!-- /.c-card__coopy -->
+                        <div class="c-plan__bottom-wrap">
+                          <div class="c-tag__list">
+                          <div class="c-tag__area">エリア </div><!-- /.c-tag__area -->
+                          <ul class="c-loc-wrap">
+                            <li>沖縄</li>
+                            </ul><!-- /.c-loc-wrap -->
+                          </div><!-- /.c-tag-wrap -->
+                          <ul class="c-tag__wrap">
+                            <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃フォトウェディング</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃前撮り</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃和婚</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃前撮り</span></li><!-- /.c-tag__item -->
+                          </ul><!-- /.c-tag-wrap -->
+                        </div><!-- /.c-planner__bottom-wrap -->
+  
+                        <div class="c-small__container">
+                          <div class="c-small__image"><img src="./assets/img/rank-3.jpg" alt=""></div><!-- /.p-small__image -->
+                          <div class="c-small__text-wrap">
+                            <p class="c-small__job">担当プランナー</p><!-- /.p-small-job -->
+                            <p class="c-small__name">鈴木 咲</p><!-- /.p-small__name -->
+                            <p class="c-small__comp">株式会社p-wedding</p><!-- /.p-small__comp -->
+                          </div><!-- /.p-small__text-wrap -->
+                        </div><!-- /.p-small__container -->
+                        <button class="c-read__btn  --mt-auto"><a href="">Read more</a></button><!-- /.c-read__btn -->
+                      </div><!-- / -->
+                    </div><!-- / -->
+                  </div>
+
+                  <div class="swiper-slide plan__swipe__swiper-slide">
+                    <div class="c-plan__card">
+                       <div class="c-plan__card-image">
+                        <div class="c-report__icon --p-card"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                        <img src="./assets/img/wedding-2.jpg" alt="">
+                      </div><!-- / -->
+                      <div class="c-plan__card-textWrap">
+                        <h3 class="c-plan__card-copy">ふたりの地元の豊川稲荷でフォトウェディング</h3><!-- /.c-card__coopy -->
+                        <div class="c-plan__bottom-wrap">
+                          <div class="c-tag__list">
+                          <div class="c-tag__area">エリア </div><!-- /.c-tag__area -->
+                          <ul class="c-loc-wrap">
+                            <li>東海</li>
+                            </ul><!-- /.c-loc-wrap -->
+                          </div><!-- /.c-tag-wrap -->
+                          <ul class="c-tag__wrap">
+                            <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃フォトウェディング</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃前撮り</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃和婚</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃前撮り</span></li><!-- /.c-tag__item -->
+                          </ul><!-- /.c-tag-wrap -->
+                        </div><!-- /.c-planner__bottom-wrap -->
+  
+                        <div class="c-small__container">
+                          <div class="c-small__image"><img src="./assets/img/planner-1.jpg" alt=""></div><!-- /.p-small__image -->
+                          <div class="c-small__text-wrap">
+                            <p class="c-small__job">担当プランナー</p><!-- /.p-small-job -->
+                            <p class="c-small__name">佐々木 結</p><!-- /.p-small__name -->
+                            <p class="c-small__comp">オリオンウェディング</p><!-- /.p-small__comp -->
+                          </div><!-- /.p-small__text-wrap -->
+                        </div><!-- /.p-small__container -->
+                        <button class="c-read__btn  --mt-auto"><a href="">Read more</a></button><!-- /.c-read__btn -->
+                      </div><!-- / -->
+                    </div><!-- / -->
+                  </div>
+
+                  <div class="swiper-slide plan__swipe__swiper-slide">
+                    <div class="c-plan__card">
+                     <div class="c-plan__card-image">
+                      <div class="c-report__icon --p-card"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                        <img src="./assets/img/wedding-1.jpg" alt="">
+                      </div><!-- / -->
+                      <div class="c-plan__card-textWrap">
+                        <h3 class="c-plan__card-copy">100名のゲストに囲まれた <br>
+                          2年越しの結婚式</h3><!-- /.c-card__coopy -->
+                        <div class="c-plan__bottom-wrap">
+                          <div class="c-tag__list">
+                          <div class="c-tag__area">エリア </div><!-- /.c-tag__area -->
+                          <ul class="c-loc-wrap">
+                            <li>関東</li>
+                            </ul><!-- /.c-loc-wrap -->
+                          </div><!-- /.c-tag-wrap -->
+                          <ul class="c-tag__wrap">
+                            <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃フォトウェディング</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃前撮り</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃和婚</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃前撮り</span></li><!-- /.c-tag__item -->
+                          </ul><!-- /.c-tag-wrap -->
+                        </div><!-- /.c-planner__bottom-wrap -->
+  
+                        <div class="c-small__container">
+                          <div class="c-small__image"><img src="./assets/img/planner-2.jpg" alt=""></div><!-- /.p-small__image -->
+                          <div class="c-small__text-wrap">
+                            <p class="c-small__job">担当プランナー</p><!-- /.p-small-job -->
+                            <p class="c-small__name">加藤 美玲</p><!-- /.p-small__name -->
+                            <p class="c-small__comp">株式会社best wedding</p><!-- /.p-small__comp -->
+                          </div><!-- /.p-small__text-wrap -->
+                        </div><!-- /.p-small__container -->
+                        <button class="c-read__btn  --mt-auto"><a href="">Read more</a></button><!-- /.c-read__btn -->
+                      </div><!-- / -->
+                    </div><!-- / -->
+                  </div>
+
+                  <div class="swiper-slide plan__swipe__swiper-slide">
+                    <div class="c-plan__card">
+                       <div class="c-plan__card-image">
+                        <div class="c-report__icon --p-card"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                        <img src="./assets/img/new-1.jpg" alt="">
+                      </div><!-- / -->
+                      <div class="c-plan__card-textWrap">
+                        <h3 class="c-plan__card-copy">ドレスコードなしの <br>
+                          カジュアルウェディング</h3><!-- /.c-card__coopy -->
+                        <div class="c-plan__bottom-wrap">
+                          <div class="c-tag__list">
+                          <div class="c-tag__area">エリア </div><!-- /.c-tag__area -->
+                          <ul class="c-loc-wrap">
+                            <li>関東</li>
+                            </ul><!-- /.c-loc-wrap -->
+                          </div><!-- /.c-tag-wrap -->
+                          <ul class="c-tag__wrap">
+                            <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃フォトウェディング</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃前撮り</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃和婚</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃前撮り</span></li><!-- /.c-tag__item -->
+                          </ul><!-- /.c-tag-wrap -->
+                        </div><!-- /.c-planner__bottom-wrap -->
+  
+                        <div class="c-small__container">
+                          <div class="c-small__image"><img src="./assets/img/planner-1.jpg" alt=""></div><!-- /.p-small__image -->
+                          <div class="c-small__text-wrap">
+                            <p class="c-small__job">担当プランナー</p><!-- /.p-small-job -->
+                            <p class="c-small__name">加藤 美玲</p><!-- /.p-small__name -->
+                            <p class="c-small__comp">株式会社best wedding</p><!-- /.p-small__comp -->
+                          </div><!-- /.p-small__text-wrap -->
+                        </div><!-- /.p-small__container -->
+                        <button class="c-read__btn  --mt-auto"><a href="">Read more</a></button><!-- /.c-read__btn -->
+                      </div><!-- / -->
+                    </div><!-- / -->
+                  </div>
+
+                </div>
+              </div>
+              <div class="swiper-button-prev plan__swiper-button-prev"></div>
+              <div class="swiper-button-next plan__swiper-button-next"></div>
+            </div>
+          </div><!-- /.l-plan__swipe-container -->
+
+          <button class="c-main__btn"><a href="">新着レポートを <br class="sp-only">もっとみる</a></button><!-- /.c-main__btn -->
+          </div>
+     
+    </section><!-- /.popular -->
+
+
+    <section class="l-section p-reccomendation">
+      <div class="l-inner">
+
+        <h2 class="c-heading-l1"> <span>Reccomend Planner</span><span class="c-head__ja">人気のウェディングプランナー</span></h2><!-- /.c-heading-l1 -->
+        <h3 class="c-heading-l2 --mt64"><span>Ranking</span><span class="c-heading__ja">人気プランナーランキング</span></h3><!-- /.c-heading-l2 -->
+
+        
+          <div class="recome__swiper-container">
+            <div class="swiper recome__swiper">
+              <div class="swiper-wrapper recome__swiper-wrapper l-reccomendation__card-list">
+                <div class="swiper-slide recome__swiper-slide">
+                  <div class="c-reccomendation__card --top">
+                    <div class="c-reccomendation__card-inner">
+                      <p class="c-voice__flag"><span>No.</span>01</p><!-- /.c-voice__flag -->
+                      <div class="c-reccomendation__card-top">
+                        <div class="c-reccomendation__card-left">
+                          <div class="c-reccomendation__image">
+                            <div class="c-report__icon --p-card"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                            <img src="./assets/img/planner-2.jpg" alt=""></div><!-- /.p-small__image -->
+                            <p class="c-reccomendation__name">鈴木 直子</p><!-- /.p-small__name -->
+                            <p class="c-reccomendation__comp">株式会社mirage</p><!-- /.p-small__comp -->
+                       </div><!-- /.p-small__container -->
+                       <div class="c-reccomendation__card-right">
+                        <h3 class="c-reccomendation__card-copy">心に残る <br>
+                          ウェディングを</h3><!-- /.c-card__coopy -->
+                        <div class="c-reccomendation__text-wrap">
+                       
+                          <div class="c-tag__area">エリア </div><!-- /.c-tag__area -->
+                          <ul class="c-loc-wrap">
+                            <li>東京</li>
+                            <li>神奈川</li>
+                            <li>千葉</li>
+                            <li>埼玉</li>
+                            <li>長野</li>
+                            <li>愛知</li>
+                            <li>岡山</li>
+                            <li>大阪</li>
+                            <li>広島</li>
+                            <li>福岡</li>
+                            <li>沖縄</li>
+                            <li>海外</li>
+                            
+                          </ul><!-- /.c-loc-wrap -->
+                          <ul class="c-tag__wrap">
+                            <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃レストラン</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃リゾートウェディング</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃アウトドア</span></li><!-- /.c-tag__item -->
+                          </ul><!-- /.c-tag-wrap -->
+                        </div><!-- /.c-planner__bottom-wrap -->
+                       </div><!-- / -->
+                      </div><!-- / -->
+        
+                      <div class="c-reccomendation__card-bottom">
+                        <div class="c-reccomendation__card-checkpiont">
+                          <p class="c-reccomendation__card-point">Point</p><!-- / -->
+                          <ul class="c-reccomendation__card-pointlist">
+                            <li>オンライン相談OK</li>
+                            <li>担当挙式数200組以上</li>
+                            <li>アウトドアウェディングが得意</li>
+                          </ul><!-- / -->
+                        </div><!-- / -->
+                        <div class="c-reccomendation__card-gallery">
+                          <p class="c-reccomendation__garrely-title">Photo Garally</p><!-- / -->
+                          <div class="c-reccomendation__gallery-list">
+                            <img src="./assets/img/card-4.jpg" alt="" class="c-reccomend__gallery-image">
+                            <img src="./assets/img/rank-10.jpg" alt="" class="c-reccomend__gallery-image">
+                          </div><!-- / -->
+                        </div><!-- / -->
+                        </div>
+                    </div><!-- / -->
+                  </div><!-- /.c-reccomend__card -->
+                </div>
+
+                <div class="swiper-slide recome__swiper-slide">
+                  <div class="c-reccomendation__card --top">
+                    <div class="c-reccomendation__card-inner">
+                      <p class="c-voice__flag"><span>No.</span>02</p><!-- /.c-voice__flag -->
+                      <div class="c-reccomendation__card-top">
+                        <div class="c-reccomendation__card-left">
+                          <div class="c-reccomendation__image">
+                            <div class="c-report__icon --p-card"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                            <img src="./assets/img/planner-1.jpg" alt=""></div><!-- /.p-small__image -->
+                            <p class="c-reccomendation__name">加藤 美玲</p><!-- /.p-small__name -->
+                            <p class="c-reccomendation__comp">株式会社Pwedding</p><!-- /.p-small__comp -->
+                       </div><!-- /.p-small__container -->
+                       <div class="c-reccomendation__card-right">
+                        <h3 class="c-reccomendation__card-copy">自分たちらしい結婚式を自分たちの手で</h3><!-- /.c-card__coopy -->
+                        <div class="c-reccomendation__text-wrap">
+                       
+                          <div class="c-tag__area">エリア </div><!-- /.c-tag__area -->
+                          <ul class="c-loc-wrap">
+                            <li>東京</li>
+                            <li>神奈川</li>
+                            <li>千葉</li>
+                            <li>埼玉</li>
+                            <li>長野</li>
+                            <li>愛知</li>
+                            <li>岡山</li>
+                            <li>大阪</li>
+                            <li>広島</li>
+                            <li>福岡</li>
+                            <li>沖縄</li>
+                            <li>海外</li>
+                            
+                          </ul><!-- /.c-loc-wrap -->
+                          <ul class="c-tag__wrap">
+                            <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃レストラン</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃リゾートウェディング</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃アウトドア</span></li><!-- /.c-tag__item -->
+                          </ul><!-- /.c-tag-wrap -->
+                        </div><!-- /.c-planner__bottom-wrap -->
+                       </div><!-- / -->
+                      </div><!-- / -->
+        
+                      <div class="c-reccomendation__card-bottom">
+                        <div class="c-reccomendation__card-checkpiont">
+                          <p class="c-reccomendation__card-point">Point</p><!-- / -->
+                          <ul class="c-reccomendation__card-pointlist">
+                            <li>司会もできる</li>
+                            <li>打ち合わせ回数制限なし</li>
+                            <li>海外挙式OK</li>
+                          </ul><!-- / -->
+                        </div><!-- / -->
+                        <div class="c-reccomendation__card-gallery">
+                          <p class="c-reccomendation__garrely-title">Photo Garally</p><!-- / -->
+                          <div class="c-reccomendation__gallery-list">
+                            <img src="./assets/img/rank-5.jpg" alt="" class="c-reccomend__gallery-image">
+                            <img src="./assets/img/rank-8.jpg" alt="" class="c-reccomend__gallery-image">
+                          </div><!-- / -->
+                        </div><!-- / -->
+                        </div>
+                    </div><!-- / -->
+                  </div><!-- /.c-reccomend__card -->
+                  </div>
+
+                  <div class="swiper-slide recome__swiper-slide">
+                    <div class="c-reccomendation__card --top">
+                      <div class="c-reccomendation__card-inner">
+                        <p class="c-voice__flag"><span>No.</span>03</p><!-- /.c-voice__flag -->
+                        <div class="c-reccomendation__card-top">
+                          <div class="c-reccomendation__card-left">
+                            <div class="c-reccomendation__image">
+                              <div class="c-report__icon --p-card"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                              <img src="./assets/img/rank-3.jpg" alt=""></div><!-- /.p-small__image -->
+                              <p class="c-reccomendation__name">尾崎 舞</p><!-- /.p-small__name -->
+                              <p class="c-reccomendation__comp">hoihoi produce</p><!-- /.p-small__comp -->
+                         </div><!-- /.p-small__container -->
+                         <div class="c-reccomendation__card-right">
+                          <h3 class="c-reccomendation__card-copy">最高のプランを <br>
+                            一緒に作りましょう</h3><!-- /.c-card__coopy -->
+                          <div class="c-reccomendation__text-wrap">
+                         
+                            <div class="c-tag__area">エリア </div><!-- /.c-tag__area -->
+                            <ul class="c-loc-wrap">
+                              <li>東京</li>
+                              <li>神奈川</li>
+                              <li>千葉</li>
+                              <li>埼玉</li>
+                              <li>長野</li>
+                              <li>愛知</li>
+                              <li>岡山</li>
+                              <li>大阪</li>
+                              <li>広島</li>
+                              <li>福岡</li>
+                              <li>沖縄</li>
+                              <li>海外</li>
+                              
+                            </ul><!-- /.c-loc-wrap -->
+                            <ul class="c-tag__wrap">
+                              <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                              <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                              <li class="c-tag__item"><span>＃レストラン</span></li><!-- /.c-tag__item -->
+                              <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                              <li class="c-tag__item"><span>＃リゾートウェディング</span></li><!-- /.c-tag__item -->
+                              <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                              <li class="c-tag__item"><span>＃アウトドア</span></li><!-- /.c-tag__item -->
+                            </ul><!-- /.c-tag-wrap -->
+                          </div><!-- /.c-planner__bottom-wrap -->
+                         </div><!-- / -->
+                        </div><!-- / -->
+          
+                        <div class="c-reccomendation__card-bottom">
+                          <div class="c-reccomendation__card-checkpiont">
+                            <p class="c-reccomendation__card-point">Point</p><!-- / -->
+                            <ul class="c-reccomendation__card-pointlist">
+                              <li>司会もできる</li>
+                              <li>打ち合わせ回数制限なし</li>
+                              <li>海外挙式OK</li>
+                            </ul><!-- / -->
+                          </div><!-- / -->
+                          <div class="c-reccomendation__card-gallery">
+                            <p class="c-reccomendation__garrely-title">Photo Garally</p><!-- / -->
+                            <div class="c-reccomendation__gallery-list">
+                              <img src="./assets/img/rank-6.jpg" alt="" class="c-reccomend__gallery-image">
+                              <img src="./assets/img/rank-9.jpg" alt="" class="c-reccomend__gallery-image">
+                            </div><!-- / -->
+                          </div><!-- / -->
+                          </div>
+                      </div><!-- / -->
+                    </div><!-- /.c-reccomend__card -->
+                    </div>
+              </div>
+            </div>
+           
+            <div class="swiper-button-prev recome-swiper-button-prev"></div>
+            <div class="swiper-button-next recome-swiper-button-next"></div>
+          </div>
+          
+
+
+        <div class="l-recommendation__swipe">
+          <div class="reccomendation__swiper-container">
+            <div class="swiper reccomendation__swiper">
+              <div class="swiper-wrapper reccomendation__swiper-wrapper">
+                <div class="swiper-slide reccomendation__swiper-slide">
+                  <div class="c-reccomendation__card --bg-white">
+                    <div class="c-reccomendation__card-inner">
+                      <div class="c-reccomendation__card-top">
+                        <div class="c-reccomendation__card-left">
+                          <div class="c-reccomendation__image">
+                            <div class="c-report__icon --p-card"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                            <img src="./assets/img/planner-2.jpg" alt=""></div><!-- /.p-small__image -->
+                            <p class="c-reccomendation__name">酒井 菜々子</p><!-- /.p-small__name -->
+                            <p class="c-reccomendation__comp">株式会社mirage</p><!-- /.p-small__comp -->
+                       </div><!-- /.p-small__container -->
+                       <div class="c-reccomendation__card-right">
+                        <h3 class="c-reccomendation__card-copy">心に残る <br>
+                          ウェディングを</h3><!-- /.c-card__coopy -->
+                        <div class="c-reccomendation__text-wrap">
+                       
+                          <div class="c-tag__area">エリア </div><!-- /.c-tag__area -->
+                          <ul class="c-loc-wrap">
+                            <li>東京</li>
+                            <li>神奈川</li>
+                            <li>千葉</li>
+                            <li>埼玉</li>
+                            <li>長野</li>
+                            <li>愛知</li>
+                            <li>岡山</li>
+                            <li>大阪</li>
+                            <li>広島</li>
+                            <li>福岡</li>
+                            <li>沖縄</li>
+                            <li>海外</li>
+                            
+                          </ul><!-- /.c-loc-wrap -->
+                          <ul class="c-tag__wrap">
+                            <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃レストラン</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃リゾートウェディング</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃アウトドア</span></li><!-- /.c-tag__item -->
+                          </ul><!-- /.c-tag-wrap -->
+                        </div><!-- /.c-planner__bottom-wrap -->
+                       </div><!-- / -->
+                      </div><!-- / -->
+        
+                      <div class="c-reccomendation__card-bottom ">
+                        <div class="c-reccomendation__card-checkpiont --bg-gray">
+                          <p class="c-reccomendation__card-point">Point</p><!-- / -->
+                          <ul class="c-reccomendation__card-pointlist">
+                            <li>司会もできる</li>
+                            <li>打ち合わせ回数制限なし</li>
+                            <li>海外挙式OK</li>
+                          </ul><!-- / -->
+                        </div><!-- / -->
+                        
+                        </div>
+                    </div><!-- / -->
+                  </div><!-- /.c-reccomend__card -->
+                </div>
+
+                <div class="swiper-slide reccomendation__swiper-slide">
+                  <div class="c-reccomendation__card --bg-white">
+                    <div class="c-reccomendation__card-inner">
+                      <div class="c-reccomendation__card-top">
+                        <div class="c-reccomendation__card-left">
+                          <div class="c-reccomendation__image">
+                            <div class="c-report__icon --p-card"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                            <img src="./assets/img/planner-1.jpg" alt=""></div><!-- /.p-small__image -->
+                            <p class="c-reccomendation__name">加藤 美玲</p><!-- /.p-small__name -->
+                            <p class="c-reccomendation__comp">株式会社Pwedding</p><!-- /.p-small__comp -->
+                       </div><!-- /.p-small__container -->
+                       <div class="c-reccomendation__card-right">
+                        <h3 class="c-reccomendation__card-copy">自分たちらしい結婚式を自分たちの手で</h3><!-- /.c-card__coopy -->
+                        <div class="c-reccomendation__text-wrap">
+                       
+                          <div class="c-tag__area">エリア </div><!-- /.c-tag__area -->
+                          <ul class="c-loc-wrap">
+                            <li>東京</li>
+                            <li>神奈川</li>
+                            <li>千葉</li>
+                            <li>埼玉</li>
+                            <li>長野</li>
+                            <li>愛知</li>
+                            <li>岡山</li>
+                            <li>大阪</li>
+                            <li>広島</li>
+                            <li>福岡</li>
+                            <li>沖縄</li>
+                            <li>海外</li>
+                            
+                          </ul><!-- /.c-loc-wrap -->
+                          <ul class="c-tag__wrap">
+                            <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃レストラン</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃リゾートウェディング</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃アウトドア</span></li><!-- /.c-tag__item -->
+                          </ul><!-- /.c-tag-wrap -->
+                        </div><!-- /.c-planner__bottom-wrap -->
+                       </div><!-- / -->
+                      </div><!-- / -->
+        
+                      <div class="c-reccomendation__card-bottom ">
+                        <div class="c-reccomendation__card-checkpiont --bg-gray">
+                          <p class="c-reccomendation__card-point">Point</p><!-- / -->
+                          <ul class="c-reccomendation__card-pointlist">
+                            <li>司会もできる</li>
+                            <li>打ち合わせ回数制限なし</li>
+                            <li>海外挙式OK</li>
+                          </ul><!-- / -->
+                        </div><!-- / -->
+                        
+                        </div>
+                    </div><!-- / -->
+                  </div><!-- /.c-reccomend__card -->
+                </div>
+
+
+                <div class="swiper-slide reccomendation__swiper-slide">
+                  <div class="c-reccomendation__card --bg-white">
+                    <div class="c-reccomendation__card-inner">
+                      <div class="c-reccomendation__card-top">
+                        <div class="c-reccomendation__card-left">
+                          <div class="c-reccomendation__image">
+                            <div class="c-report__icon --p-card"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                            <img src="./assets/img/rank-3.jpg" alt=""></div><!-- /.p-small__image -->
+                            <p class="c-reccomendation__name">尾崎 舞</p><!-- /.p-small__name -->
+                            <p class="c-reccomendation__comp">hoihoi produce</p><!-- /.p-small__comp -->
+                       </div><!-- /.p-small__container -->
+                       <div class="c-reccomendation__card-right">
+                        <h3 class="c-reccomendation__card-copy">最高のプランを <br>
+                          一緒に作りましょう</h3><!-- /.c-card__coopy -->
+                        <div class="c-reccomendation__text-wrap">
+                       
+                          <div class="c-tag__area">エリア </div><!-- /.c-tag__area -->
+                          <ul class="c-loc-wrap">
+                            <li>東京</li>
+                            <li>神奈川</li>
+                            <li>千葉</li>
+                            <li>埼玉</li>
+                            <li>長野</li>
+                            <li>愛知</li>
+                            <li>岡山</li>
+                            <li>大阪</li>
+                            <li>広島</li>
+                            <li>福岡</li>
+                            <li>沖縄</li>
+                            <li>海外</li>
+                            
+                          </ul><!-- /.c-loc-wrap -->
+                          <ul class="c-tag__wrap">
+                            <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃レストラン</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃リゾートウェディング</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃アウトドア</span></li><!-- /.c-tag__item -->
+                          </ul><!-- /.c-tag-wrap -->
+                        </div><!-- /.c-planner__bottom-wrap -->
+                       </div><!-- / -->
+                      </div><!-- / -->
+        
+                      <div class="c-reccomendation__card-bottom ">
+                        <div class="c-reccomendation__card-checkpiont --bg-gray">
+                          <p class="c-reccomendation__card-point">Point</p><!-- / -->
+                          <ul class="c-reccomendation__card-pointlist">
+                            <li>司会もできる</li>
+                            <li>打ち合わせ回数制限なし</li>
+                            <li>海外挙式OK</li>
+                          </ul><!-- / -->
+                        </div><!-- / -->
+                        
+                        </div>
+                    </div><!-- / -->
+                  </div><!-- /.c-reccomend__card -->
+                </div>
+
+                <div class="swiper-slide reccomendation__swiper-slide">
+                  <div class="c-reccomendation__card --bg-white">
+                    <div class="c-reccomendation__card-inner">
+                      <div class="c-reccomendation__card-top">
+                        <div class="c-reccomendation__card-left">
+                          <div class="c-reccomendation__image">
+                            <div class="c-report__icon --p-card"><img src="./assets/img/hart.svg" alt=""></div><!-- /.c-plnner__icon -->
+                            <img src="./assets/img/planner-5.jpg" alt=""></div><!-- /.p-small__image -->
+                            <p class="c-reccomendation__name">鈴木 直子</p><!-- /.p-small__name -->
+                            <p class="c-reccomendation__comp">株式会社mirage</p><!-- /.p-small__comp -->
+                       </div><!-- /.p-small__container -->
+                       <div class="c-reccomendation__card-right">
+                        <h3 class="c-reccomendation__card-copy">心に残る <br>
+                          ウェディングを</h3><!-- /.c-card__coopy -->
+                        <div class="c-reccomendation__text-wrap">
+                       
+                          <div class="c-tag__area">エリア </div><!-- /.c-tag__area -->
+                          <ul class="c-loc-wrap">
+                            <li>東京</li>
+                            <li>神奈川</li>
+                            <li>千葉</li>
+                            <li>埼玉</li>
+                            <li>長野</li>
+                            <li>愛知</li>
+                            <li>岡山</li>
+                            <li>大阪</li>
+                            <li>広島</li>
+                            <li>福岡</li>
+                            <li>沖縄</li>
+                            <li>海外</li>
+                            
+                          </ul><!-- /.c-loc-wrap -->
+                          <ul class="c-tag__wrap">
+                            <li class="c-tag__item"><span>＃国内</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃レストラン</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃リゾートウェディング</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+                            <li class="c-tag__item"><span>＃アウトドア</span></li><!-- /.c-tag__item -->
+                          </ul><!-- /.c-tag-wrap -->
+                        </div><!-- /.c-planner__bottom-wrap -->
+                       </div><!-- / -->
+                      </div><!-- / -->
+        
+                      <div class="c-reccomendation__card-bottom ">
+                        <div class="c-reccomendation__card-checkpiont --bg-gray">
+                          <p class="c-reccomendation__card-point">Point</p><!-- / -->
+                          <ul class="c-reccomendation__card-pointlist">
+                            <li>司会もできる</li>
+                            <li>打ち合わせ回数制限なし</li>
+                            <li>海外挙式OK</li>
+                          </ul><!-- / -->
+                        </div><!-- / -->
+                        
+                        </div>
+                    </div><!-- / -->
+                  </div><!-- /.c-reccomend__card -->
+                </div>
+              </div>
+            </div>
+            
+            <div class="swiper-button-prev reccomendation__swiper-button-prev"></div>
+            <div class="swiper-button-next reccomendation__swiper-button-next"></div>
+          </div>
+        </div><!-- /.l-recommendation__swipe -->
+
+        <button class="c-main__btn"><a href="">プランナー一覧へ</a></button><!-- /.c-main__btn -->
+
+
+      </div><!-- /.l-inner -->
+    </section><!-- /.reccomend -->
+
+    <section class="l-section p-pickup-tag">
+      <div class="l-inner">
+        <h2 class="c-heading-l1"> <span>Pick up Tags</span><span class="c-head__ja">キーワードからプランナーを探す</span></h2><!-- /.c-heading-l1 -->
+
+        <div class="l-pickup-tag__container">
+          <div class="p-picup-tag__list">
+          <div class="p-pickup-tag__item">
+            <p class="p-pickup-tag__desc">場所から</p><!-- / -->
+            <ul class="c-tag__wrap">
+              <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+              <li class="c-tag__item"><span>＃レストラン</span></li><!-- /.c-tag__item -->
+              <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+              <li class="c-tag__item"><span>＃リゾートウェディング</span></li><!-- /.c-tag__item -->
+            </ul><!-- /.c-tag-wrap -->
+          </div><!-- / -->
+
+          <div class="p-pickup-tag__item">
+            <p class="p-pickup-tag__desc">こだわりから</p><!-- / -->
+            <ul class="c-tag__wrap">
+              <li class="c-tag__item"><span>＃野外ウェディング</span></li><!-- /.c-tag__item -->
+              <li class="c-tag__item"><span>＃ゲストハウス</span></li><!-- /.c-tag__item -->
+              <li class="c-tag__item"><span>＃自宅</span></li><!-- /.c-tag__item -->
+              <li class="c-tag__item"><span>＃アウトドアウェディング</span></li><!-- /.c-tag__item -->
+              <li class="c-tag__item"><span>＃専門式場</span></li><!-- /.c-tag__item -->
+              <li class="c-tag__item"><span>＃レストラン</span></li><!-- /.c-tag__item -->
+              <li class="c-tag__item"><span>＃ホテル</span></li><!-- /.c-tag__item -->
+              <li class="c-tag__item"><span>＃ビーチウェディング</span></li><!-- /.c-tag__item -->
+              <li class="c-tag__item"><span>＃ペントハウスウェディング</span></li><!-- /.c-tag__item -->
+            </ul><!-- /.c-tag-wrap -->
+          </div><!-- / -->
+
+          <div class="p-pickup-tag__item">
+            <p class="p-pickup-tag__desc">形式から</p><!-- / -->
+            <ul class="c-tag__wrap">
+              <li class="c-tag__item"><span>＃挙式</span></li><!-- /.c-tag__item -->
+              <li class="c-tag__item"><span>＃披露宴</span></li><!-- /.c-tag__item -->
+              <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+              <li class="c-tag__item"><span>＃リゾートウェディング</span></li><!-- /.c-tag__item -->
+              <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+              <li class="c-tag__item"><span>＃レストラン</span></li><!-- /.c-tag__item -->
+              <li class="c-tag__item"><span>＃海外</span></li><!-- /.c-tag__item -->
+              <li class="c-tag__item"><span>＃リゾートウェディング</span></li><!-- /.c-tag__item -->
+            </ul><!-- /.c-tag-wrap -->
+          </div><!-- / -->
+        </div><!-- /.p-picup-tag__list -->
+        </div><!-- / -->
+
+      </div><!-- /.l-inner -->
+    </section><!-- /.l-section p-pickup-tag -->
+
+
+    <section class="l-section p-voice">
+      <div class="l-inner">
+        <h2 class="c-heading-l1"><span>Voice</span> <span class="c-head__ja">先輩花嫁からの口コミ</span></h2><!-- /.c-heading-l1 -->
+
+        <div class="l-voice__container">
+          <h3 class="c-heading-l5">New voice<span>新着口コミ</span></h3><!-- /.c-heading-l2 -->
+
+          <div class="l-voice__swipe">
+
+            <div class="voice__swiper-container">
+              <div class="swiper voice__swiper">
+                <div class="swiper-wrapper voice__swiper-wrapper">
+                  <div class="swiper-slide voice__swiper-slide">
+                    <div class="c-voice__wide">
+                      <div class="c-voice__wide-copy"><p class="c-voice__copy-text">New</p></div><!-- /.c-voice__copy -->
+                        <div class="c-voice__wide-container">
+                      <div class="c-voice__wide-image"><img src="./assets/img/photo-9-1.jpg" alt=""></div><!-- / -->
+                         <div class="c-voice__wide-text-wrap">
+                      <div class="c-voice__wide-top">
+                        <div class="c-voice__wide-left">
+                          <p class="c-voice__wide-title">最高のプランナーさんに出会えました！</p><!-- / -->
+                          <div class="c-voice__wide-rating">
+                            <p class="c-voice__wide-rate-text">プランナー満足度</p><!-- / -->
+                            <div class="c-voice__wide-rate-image"></div><!-- / -->
+                          </div><!-- / -->
+                        </div><!-- / -->
+          
+                        <div class="c-voice__wide-right">
+                        <div class="c-voice__wide-l"> <div class="c-small__container">
+                                    <div class="c-small__image"><img src="./assets/img/planner-5.jpg" alt=""></div><!-- /.p-small__image -->
+                                    <div class="c-small__text-wrap">
+                                      <p class="c-small__job">担当プランナー</p><!-- /.p-small-job -->
+                                      <p class="c-small__name">加藤 美玲</p><!-- /.p-small__name -->
+                                      <p class="c-small__comp">株式会社best wedding</p><!-- /.p-small__comp -->
+                                    </div><!-- /.p-small__text-wrap -->
+                                  </div><!-- /.p-small__container --></div><!-- / -->
+                        <div class="c-voice__wide-r"><p class="c-voice__rating">4.12 <span>(20)</span></p><!-- /.p-small__comp --></div><!-- / -->
+                          </div><!-- / -->
+                        </div><!-- / -->
+          
+                        <div class="c-voice__wide-bottom">
+                          <p class="c-voice__wide-desc">口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。</p><!-- / -->
+                          <p class="c-voice__wide-name">ゆりゆり さん 28歳 女性</p><!-- / -->
+                          <p class="c-voice-wide__site">フォトウェディング</p><!-- /.c-planner__name -->
+                        </div><!-- / -->
+                      </div><!-- / -->
+                    </div><!-- /.c-vice__wide-container -->
+                      <div class="c-voice__wide-pos">
+                      <button class="c-read__btn"><a href="">Read more</a></button><!-- /.c-read__btn -->
+                    </div><!-- / -->
+                    </div><!-- / -->
+                  </div>
+
+                  <div class="swiper-slide voice__swiper-slide">
+                    <div class="c-voice__wide">
+                      <div class="c-voice__wide-copy"><p class="c-voice__copy-text">New</p></div><!-- /.c-voice__copy -->
+                        <div class="c-voice__wide-container">
+                      <div class="c-voice__wide-image"><img src="./assets/img/photo-1.jpg" alt=""></div><!-- / -->
+                         <div class="c-voice__wide-text-wrap">
+                      <div class="c-voice__wide-top">
+                        <div class="c-voice__wide-left">
+                          <p class="c-voice__wide-title">最高のプランナーさんに出会えました！</p><!-- / -->
+                          <div class="c-voice__wide-rating">
+                            <p class="c-voice__wide-rate-text">プランナー満足度</p><!-- / -->
+                            <div class="c-voice__wide-rate-image"></div><!-- / -->
+                          </div><!-- / -->
+                        </div><!-- / -->
+          
+                        <div class="c-voice__wide-right">
+                        <div class="c-voice__wide-l"> <div class="c-small__container">
+                                    <div class="c-small__image"><img src="./assets/img/planner-6.jpg" alt=""></div><!-- /.p-small__image -->
+                                    <div class="c-small__text-wrap">
+                                      <p class="c-small__job">担当プランナー</p><!-- /.p-small-job -->
+                                      <p class="c-small__name">加藤 美玲</p><!-- /.p-small__name -->
+                                      <p class="c-small__comp">株式会社best wedding</p><!-- /.p-small__comp -->
+                                    </div><!-- /.p-small__text-wrap -->
+                                  </div><!-- /.p-small__container --></div><!-- / -->
+                        <div class="c-voice__wide-r"><p class="c-voice__rating">4.12 <span>(20)</span></p><!-- /.p-small__comp --></div><!-- / -->
+                          </div><!-- / -->
+                        </div><!-- / -->
+          
+                        <div class="c-voice__wide-bottom">
+                          <p class="c-voice__wide-desc">口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。</p><!-- / -->
+                          <p class="c-voice__wide-name">ゆりゆり さん 28歳 女性</p><!-- / -->
+                          <p class="c-voice-wide__site">フォトウェディング</p><!-- /.c-planner__name -->
+                        </div><!-- / -->
+                      </div><!-- / -->
+                    </div><!-- /.c-vice__wide-container -->
+                      <div class="c-voice__wide-pos">
+                      <button class="c-read__btn"><a href="">Read more</a></button><!-- /.c-read__btn -->
+                    </div><!-- / -->
+                    </div><!-- / -->
+                  </div>
+
+                  <div class="swiper-slide voice__swiper-slide">
+                    <div class="c-voice__wide">
+                      <div class="c-voice__wide-copy"><p class="c-voice__copy-text">New</p></div><!-- /.c-voice__copy -->
+                        <div class="c-voice__wide-container">
+                      <div class="c-voice__wide-image"><img src="./assets/img/photo-9-1.jpg" alt=""></div><!-- / -->
+                         <div class="c-voice__wide-text-wrap">
+                      <div class="c-voice__wide-top">
+                        <div class="c-voice__wide-left">
+                          <p class="c-voice__wide-title">最高のプランナーさんに出会えました！</p><!-- / -->
+                          <div class="c-voice__wide-rating">
+                            <p class="c-voice__wide-rate-text">プランナー満足度</p><!-- / -->
+                            <div class="c-voice__wide-rate-image"></div><!-- / -->
+                          </div><!-- / -->
+                        </div><!-- / -->
+          
+                        <div class="c-voice__wide-right">
+                        <div class="c-voice__wide-l"> <div class="c-small__container">
+                                    <div class="c-small__image"><img src="./assets/img/planner-2.jpg" alt=""></div><!-- /.p-small__image -->
+                                    <div class="c-small__text-wrap">
+                                      <p class="c-small__job">担当プランナー</p><!-- /.p-small-job -->
+                                      <p class="c-small__name">加藤 美玲</p><!-- /.p-small__name -->
+                                      <p class="c-small__comp">株式会社best wedding</p><!-- /.p-small__comp -->
+                                    </div><!-- /.p-small__text-wrap -->
+                                  </div><!-- /.p-small__container --></div><!-- / -->
+                        <div class="c-voice__wide-r"><p class="c-voice__rating">4.12 <span>(20)</span></p><!-- /.p-small__comp --></div><!-- / -->
+                          </div><!-- / -->
+                        </div><!-- / -->
+          
+                        <div class="c-voice__wide-bottom">
+                          <p class="c-voice__wide-desc">口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。口コミの本文が入ります。</p><!-- / -->
+                          <p class="c-voice__wide-name">ゆりゆり さん 28歳 女性</p><!-- / -->
+                          <p class="c-voice-wide__site">フォトウェディング</p><!-- /.c-planner__name -->
+                        </div><!-- / -->
+                      </div><!-- / -->
+                    </div><!-- /.c-vice__wide-container -->
+                      <div class="c-voice__wide-pos">
+                      <button class="c-read__btn"><a href="">Read more</a></button><!-- /.c-read__btn -->
+                    </div><!-- / -->
+                    </div><!-- / -->
+                  </div>
+                </div>
+              </div>
+             
+              <div class="swiper-button-prev voice__swiper-button-prev"></div>
+              <div class="swiper-button-next voice__swiper-button-next"></div>
+            </div>
+          </div><!-- /.l-voice__swipe -->
+
+          
+
+          <h3 class="c-heading-l5">Ranking<span>プランナー満足度ランキング</span></h3><!-- /.c-heading-l2 -->
+       
+            <div class="bl-voice__swiper-container">
+              <div class="swiper bl-voice__swiper">
+                <div class="swiper-wrapper bl-voice__swiper-wrapper c-voice__card-list">
+                  <div class="swiper-slide bl-voice__swiper-slide">
+                    <div class="c-voice__card">
+              
+                      <div class="c-voice__container">
+                        <p class="c-voice__flag"><span>No.</span>01</p><!-- /.c-voice__flag -->
+                        <div class="c-voice__image"><img src="./assets/img/planner-7.jpg" alt=""></div><!-- /.p-small__image -->
+                        <div class="c-voice__text-wrap">
+                          <p class="c-voice__comp">株式会社p-wedding</p><!-- /.p-small__comp -->
+                          <p class="c-voice__name">佐藤 理恵</p><!-- /.p-small__name -->
+                        <p class="c-voice__rating">4.12 <span>(20)</span></p><!-- /.p-small__comp -->
+                        </div><!-- /.p-small__text-wrap -->
+                      </div><!-- /.p-small__container -->
+                      <div class="c-voice__card-bottom">
+                        <p class="c-voice__card-copy">プランナーへの口コミ</p>
+                        <p class="c-voice__card-title">私らしい結婚式ができました！</p><!-- / -->
+                        <p class="c-voice__card-text">打ち合わせから当日まで親身になってわたしたちの相談に乗ってくださいました。やりとりもとてもスムーズでストレスなくやり取り</p><!-- / -->
+      
+                      <button class="c-page__btn"><a>このプランナーページへ</a> </button><!-- /.c-read__btn -->
+                  </div><!-- /.c-voice__card -->
+                  </div>
+                  </div>
+
+                  <div class="swiper-slide bl-voice__swiper-slide">
+                    <div class="c-voice__card">
+              
+                      <div class="c-voice__container">
+                        <p class="c-voice__flag"><span>No.</span>02</p><!-- /.c-voice__flag -->
+                        <div class="c-voice__image"><img src="./assets/img/planner-5.jpg" alt=""></div><!-- /.p-small__image -->
+                        <div class="c-voice__text-wrap">
+                          <p class="c-voice__comp">株式会社P-Wedding</p><!-- /.p-small__comp -->
+                          <p class="c-voice__name">加藤 美玲</p><!-- /.p-small__name -->
+                        <p class="c-voice__rating">4.12 <span>(20)</span></p><!-- /.p-small__comp -->
+                        </div><!-- /.p-small__text-wrap -->
+                      </div><!-- /.p-small__container -->
+                      <div class="c-voice__card-bottom">
+                        <p class="c-voice__card-copy">プランナーへの口コミ</p>
+                        <p class="c-voice__card-title">私らしい結婚式ができました！</p><!-- / -->
+                        <p class="c-voice__card-text">打ち合わせから当日まで親身になってわたしたちの相談に乗ってくださいました。やりとりもとてもスムーズでストレスなくやり取り</p><!-- / -->
+        
+                      <button class="c-page__btn"><a>このプランナーページへ</a> </button><!-- /.c-read__btn -->
+                  </div><!-- /.c-voice__card -->
+
+
+        
+                </div><!-- /.c-voice__card-list -->
+                  </div>
+
+                  <div class="swiper-slide bl-voice__swiper-slide">
+                    <div class="c-voice__card">
+              
+                      <div class="c-voice__container">
+                        <p class="c-voice__flag"><span>No.</span>03</p><!-- /.c-voice__flag -->
+                        <div class="c-voice__image"><img src="./assets/img/planner-6.jpg" alt=""></div><!-- /.p-small__image -->
+                        <div class="c-voice__text-wrap">
+                          <p class="c-voice__comp">株式会社p-wedding</p><!-- /.p-small__comp -->
+                          <p class="c-voice__name">鈴木  直子</p><!-- /.p-small__name -->
+                        <p class="c-voice__rating">4.12 <span>(20)</span></p><!-- /.p-small__comp -->
+                        </div><!-- /.p-small__text-wrap -->
+                      </div><!-- /.p-small__container -->
+                      <div class="c-voice__card-bottom">
+                        <p class="c-voice__card-copy">プランナーへの口コミ</p>
+                        <p class="c-voice__card-title">私らしい結婚式ができました！</p><!-- / -->
+                        <p class="c-voice__card-text">打ち合わせから当日まで親身になってわたしたちの相談に乗ってくださいました。やりとりもとてもスムーズでストレスなくやり取り</p><!-- / -->
+            
+                      <button class="c-page__btn"><a>このプランナーページへ</a> </button><!-- /.c-read__btn -->
+                  </div><!-- /.c-voice__card -->
+            
+                </div><!-- /.c-voice__card-list -->
+
+                  </div>
+                </div>
+              </div>
+            
+              <div class="swiper-button-prev bl-voice-button-prev"></div>
+              <div class="swiper-button-next bl-voice-button-next"></div>
+            </div>
+            
+
+            
+
+        
+
+    <button class="c-main__btn --short"><a href="">口コミ一覧へ</a></button><!-- /.c-main__btn -->
+
+          </div><!-- /.c-voice__card-list -->
+         
+
+         
+
+        </div>
+    
+    </section>
+
+
+    <section class="l-section p-instagram">
+      <div class="l-inner">
+        <h2 class="c-heading-l1"><span> Instagram</span><span class="c-head__ja">インスタグラム</span></h2><!-- /.c-heading-l1 -->
+        
+        <div class="l-instagram__gallery">
+          <div class="p-instgram__item"><img src="./assets/img/photo-4.jpg" alt=""></div><!-- /.p-imstgram__item -->
+          <div class="p-instgram__item"><img src="./assets/img/card-1.jpg" alt=""></div><!-- /.p-imstgram__item -->
+           <div class="p-instgram__item"><img src="./assets/img/card-2.jpg" alt=""></div><!-- /.p-imstgram__item -->
+           <div class="p-instgram__item"><img src="./assets/img/card-3.jpg" alt=""></div><!-- /.p-imstgram__item -->
+           <div class="p-instgram__item"><img src="./assets/img/photo-2.jpg" alt=""></div><!-- /.p-imstgram__item -->
+           <div class="p-instgram__item"><img src="./assets/img/photo-1.jpg" alt=""></div><!-- /.p-imstgram__item -->
+            <div class="p-instgram__item"><img src="./assets/img/card-5.jpg" alt=""></div><!-- /.p-imstgram__item -->
+         <div class="p-instgram__item"><img src="./assets/img/card-4.jpg" alt=""></div><!-- /.p-imstgram__item -->
+        </div><!-- /.l-instagram__gallery -->
+    
+      </div>
+      </section>
     </main>
 
-    <footer class="l-footer"></footer>
+    <footer class="l-footer p-footer">
+      <div class="l-inner">
+        <div class="p-footer__top">
+          <div class="l-footer__list">
+          <div class="p-footer__logo">
+            <a href="#top">
+            <img src="./assets/img/logo.svg" alt="">
+          </a>
+          </div><!-- /.p-footer__logo -->
+          <ul class="p-footer__nav">
+            <li><a href="">プランナーを探す</a></li>
+            <li><a href="">シンデレラレポ</a></li>
+            <li><a href="">お気に入りレポート</a></li>
+            <li><a href="">ログイン</a></li>
+            <li><a href="" class="--mt23">初めてご利用される方へ</a></li>
+            <li><a href="">よくあるご質問</a></li>
+            <li><a href="">お問い合わせ</a></li>
+          </ul><!-- /.p-footer__nav -->
+        </div><!-- /.p-footer__top -->
+
+        <div class="p-footer__follow">
+          <p class="p-footer__follow-text">Follow Me </p><!-- /.p-footer__point -->
+          <ul class="p-footer__sns-nav">
+            <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-square-facebook"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-line"></i></a></li>
+          </ul><!-- /.p-footer__sns-nav -->
+        </div><!-- /.p-footer__follow -->
+        </div>
+
+        <div class="p-footer__bottom">
+          <ul class="p-footer__policy">
+            <li><a href="">運営会社</a></li>
+            <li><a href="">プライバシーポリシー</a></li>
+            <li><a href="">利用規約</a></li>
+          </ul><!-- /.p-footer__policy -->
+        </div><!-- /.p-footer__bottom -->
+      </div><!-- /.l-inner -->
+
+      <div class="p-footer__copyright">
+        <p class="p-footer__copy-text">&copy;Best Planner All rights reserved.</p><!-- /.p-footer__copy-text -->
+        <p class="p-footer__copy-text">本サイト内は株式会社ウィザード様のご協力のもと作成したコーディング用の練習課題です。実在の人物・団体とは関係ありません。</p><!-- /.p-footer__copy-text -->
+      </div><!-- /.p-footer__copyright -->
+    </footer>
 
     <!-- jsファイルの読み込み -->
     <script src="./assets/js/lib/swiper-bundle.min.js"></script>
     <script type="module" src="./assets/js/main.js?ver1.0"></script>
+    <script type="module" src="./assets/js/swiper.js"></script>
   </body>
 </html>
+
+
+
+  

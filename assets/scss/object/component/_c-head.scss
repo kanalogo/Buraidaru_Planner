@@ -1,0 +1,266 @@
+@use "../../global" as *;
+
+
+//セクション　大見出し ========================
+
+.c-heading-l1 {
+    @include font(30, 500, 1.5,1.1 );
+    line-height: 1.5;
+    color: $color-base;
+    position: relative;
+    display: inline-block;
+    padding-left: 18px;
+    z-index: 3;
+    overflow-y: hidden;
+
+    span {
+        translate: 0 100%;
+        display: inline-block;
+    }
+
+    &.is-active {
+        span {
+            animation: slideUpAnimation 0.5s ease forwards  ;
+        }
+        &::before {
+            opacity: 1;
+        }
+    }
+    
+
+    @include mq(sp) {
+       font-size: rm(16);
+        }
+
+    .c-head__ja {
+        @include font(20, 400, 1.5,0 );
+        line-height: 1.5;
+        margin-left: rm(48);
+        position: relative;
+
+        @include mq(sp) {
+            display: block;
+            font-size: rm(16);
+            margin-left: 0;
+            margin-top: 8px;
+             }
+
+        &::after {
+            content: '';
+            width: 1px;
+            height: 40px;
+            background-color: $color-main;
+            position: absolute;
+           top: 50%;
+           translate: 0 -50%;
+            left: -24px;
+
+            @include mq(sp) {
+              content: none;
+                 }
+          
+            
+        }
+
+       
+    }
+    &::before {
+        content: '';
+        width: 35px;
+        height: 35px;
+        background-color: $color-main;
+        position: absolute;
+        top: 5px;
+        left: 0;
+        z-index: -1;
+        opacity: 0;
+
+        @include mq(sp) {
+            width: 20px;
+            height: 20px;
+            top: 0;
+            left: -10px;
+             }
+    }
+
+        
+        
+    
+}
+
+//ブロックの子見出し========================
+
+.c-heading-l2  {
+    @include font(24, 400, 1.5,1.8 );
+    line-height: 1.5;
+    color: $color-main;
+    position: relative;
+    margin-left: 1em;
+    padding-left: 1em;
+    display: block;
+    width: fit-content;
+    overflow: hidden;
+
+    span {
+        translate: -205% 0;
+        display: inline-block;
+    }
+
+    &.is-active {
+        span {
+            animation: slideLeftAnimation 0.5s ease forwards  ;
+        }
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    @include mq(sp) {
+        font-size: rm(16);
+        text-align: left;
+        
+           }
+
+    &::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        background-color: #D9D9D9;
+        position: absolute;
+        top: 50%;
+        translate: -50% -50%;
+        left: 8px;
+    }
+
+    .c-heading__ja {
+        @include font(20, 400, 1.5,0 );
+        line-height: 1;
+        color: $color-base;
+
+        @include mq(sp) {
+            font-size: rm(16);
+               }
+    }
+
+    &.--mt64 {
+        margin-top: 64px;
+
+            @include mq(sp) {
+                margin-top: 24px;
+               }
+        
+    }
+}
+
+.c-head__l3 {
+    @include font(20, 500, 1, 1.08);
+    line-height: 1;
+    color: $color-main;
+    position: relative;
+    display: inline-block;
+
+    @include mq(sp) {
+        font-size: rm(16);
+       }
+
+    &::before,
+    &::after {
+        content: '';
+        width: 1px;
+        height: 40px;
+        background-color: $color-main;
+        rotate: 45deg;
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+
+        @include mq(sp) {
+            height: 20px;
+           }
+    }
+    &::before {
+        left: -42px;
+        rotate: -45deg;
+    }
+    &::after {
+        right: -42px;
+    }
+
+
+
+}
+
+//ブロックの子見出し ========================
+
+.c-heading-l4 {
+    @include font(18,400 ,1 ,0 );
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    z-index: 3;
+
+    &::before {
+        content: '';
+        width: 31px;
+        height: 30px;
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+        left: -16px;
+        z-index: -1;
+    }
+
+    &.--orange {
+        &::before {
+          background-color: $tag-color-orange;
+        }
+    }
+    &.--pink {
+        &::before {
+          background-color: $tag-color-pink;
+        }
+    }
+    &.--green {
+        &::before {
+          background-color: $tag-color-green;
+        }
+    }
+}
+
+.c-heading-l5  {
+    @include font(24, 400, 1.5,1.8 );
+    line-height: 1.5;
+    color: #fff;
+    position: relative;
+    margin-left: 1em;
+
+    @include mq(sp) {
+        font-size: rm(16);
+       }
+
+    &::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        background-color: #D9D9D9;
+        position: absolute;
+        top: 50%;
+        translate: -50% -50%;
+        left: -8px;
+    }
+
+    span {
+        @include font(20, 400, 1.5,0 );
+        line-height: 1;
+        color: #000;
+        display: inline-block;
+        margin-left: 8px;
+        @include mq(sp) {
+            font-size: rm(16);
+           }
+    }
+
+    &.--mt64 {
+        margin-top: 64px;
+    }
+}

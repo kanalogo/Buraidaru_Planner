@@ -1,2 +1,16 @@
 @use "../global" as *;
 
+.footer {
+    padding-top: 10px;
+}
+
+.l-footer__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 45px;
+
+    @include mq(sp) {
+        align-items: flex-start;
+       }
+}

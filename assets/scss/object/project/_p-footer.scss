@@ -1,2 +1,233 @@
 @use "../../global" as *;
 
+.p-footer {
+   background-color: #F7F7F7;
+}
+
+.p-footer__top {
+    padding-block: rm(72) rm(64);
+    border-bottom: 1px solid #757676;
+    padding-inline: rm(63) rm(90);
+    position: relative;
+
+    
+    @include mq(sp) {
+        padding-block: 48px;
+        padding-inline: 20px;
+       }
+}
+
+.p-footer__logo {
+    width: 229px;
+    height: auto;
+        transition: opacity 0.3s ease;
+
+        @include mq(sp) {
+            width: 118px;
+           }
+        @media (hover: hover) {
+            &:hover {
+             opacity: 0,7;
+
+              
+            }
+    
+    }
+    
+    img {
+        object-fit: contain;
+    }
+
+    
+}
+
+
+.p-footer__nav {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: rm(24);
+    row-gap: rm(24);
+    max-width: 520px;
+
+    @include mq(sp) {
+        flex-direction: column;
+        align-items: left;
+        gap: 8px;
+       }
+
+       
+
+    li a {
+        @include font(16, 400, 1, 0);
+        line-height: 1;
+        color: #000;
+
+        position: relative;
+
+        &.--mt23 {
+            @include mq(sp) {
+               margin-top: 23px;
+               }
+           }
+
+        @include mq(sp) {
+            font-size: rm(12);
+           }
+        &::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background-color: #000;
+          left: 50%;
+          translate: -50%;
+          bottom: -12px;
+          scale: 0 1;
+          transition: scale 0.3s ease;
+        }
+     
+        @media (hover: hover) {
+            &:hover {
+              &::before {
+           scale: 1 1;
+             }
+          }
+       }
+    }
+}
+
+.p-footer__follow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: rm(8);
+    margin-left: 47px;
+    width: fit-content;
+    margin-right: auto;
+
+    @include mq(sp) {
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+        left: 12px;
+        margin-left: 0;
+       }
+}
+
+.p-footer__follow-text {
+    @include font(16, 400, 1, 1.1);
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+
+    &::before,
+    &::after {
+        content: '';
+        width: 1px;
+        height: 21px;
+        background-color: #757676;
+        rotate: 45deg;
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+    }
+    &::before {
+        rotate: -45deg;
+        left: -14px;
+    }
+    &::after {
+        rotate: 45deg;
+        right: -14px;
+    }
+}
+
+.p-footer__sns-nav {
+    display: flex;
+    align-items: center;
+    column-gap: rm(16);
+
+    li a {
+        @include font(20, 400, 1, 0);
+        line-height: 1;
+    }
+}
+
+.p-footer__bottom {
+    margin-left: auto;
+    width: fit-content;
+    padding-right: 93px;
+    padding-block: rm(24);
+
+    @include mq(sp) {
+        padding-right: 0;
+        width: fit-content;
+        margin-inline: auto;
+        text-align: center;
+        
+       }
+}
+.p-footer__policy {
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+
+    @include mq(sp) {
+        column-gap: 16px;
+       }
+
+    li a {
+        @include font(14, 400, 1, 0);
+        line-height: 1;
+
+        position: relative;
+
+        @include mq(sp) {
+            font-size: 11px;
+           }
+        &::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background-color: #000;
+          left: 50%;
+          translate: -50%;
+          bottom: -12px;
+          scale: 0 1;
+          transition: scale 0.3s ease;
+        }
+     
+        @media (hover: hover) {
+            &:hover {
+              &::before {
+           scale: 1 1;
+             }
+          }
+       }
+    }
+}
+
+.p-footer__copyright {
+    padding-block: rm(9) rm(8);
+    background-color: $color-main;
+    text-align: center;
+    color: #fff;
+}
+
+.p-footer__copy-text {
+    @include font(10, 400, 1, 1.1);
+    line-height: 1.5;
+
+    @include mq(sp) {
+        max-width: 350px;
+        margin-inline: auto;
+       }
+
+
+
+    & + p {
+        margin-top: 8px;
+    }
+}

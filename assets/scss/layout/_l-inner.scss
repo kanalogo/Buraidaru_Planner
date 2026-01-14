@@ -10,7 +10,7 @@
 
   @include mq(sp) {
     width: 100%;
-    max-width: px($sp-inner-sum);
+    // max-width: px($sp-inner-sum);
     padding: 0 rm($sp-sidePadding);
   }
 }

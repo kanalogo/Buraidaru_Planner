@@ -1,0 +1,37 @@
+@use "../../global" as *;
+
+
+//角丸背景のタグ ========================
+
+.c-tag__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rm(8) rm(3);
+}
+.c-tag__item {
+    display: inline-block;
+    @include font(12, 500, 1, 0);
+    line-height: 1.5;
+    color: #fff;
+    padding: 2px 6px 2px 4px;
+    border-radius: 100vmax;
+    background-color: $color-main;
+}
+
+
+
+
+//背景なしのタグ ========================
+
+.c-loc-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 4px;
+    justify-content: flex-start;
+
+    li {
+        @include font(14, 500, 1, 0);
+        line-height: 1;
+        color: #000;
+    }
+}

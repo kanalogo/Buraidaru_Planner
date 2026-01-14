@@ -1,0 +1,653 @@
+@use "../../global" as *;
+
+//FVのセクション ========================
+
+.p-mv {
+    height: rm(791.21);
+    position: relative;
+    background-image: url('./../img/mv.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center left;
+    opacity: 0;
+    
+    &.is-active {
+    animation: slideShowAnimation 0.5s ease forwards  ;
+      }
+
+    @include mq(sp) {
+        height: rm(526);
+        background-position: center center;
+    }
+}
+
+.p-mv__container {
+    width: min(calc(414px), 100%);
+    height: 100%;
+    background-color: #FFFFFFE8;
+    position: absolute;
+    top: 0;
+    left: calc( 145 / 1440 * 100%);
+    bottom: 0;
+    translate: 0 -105%;
+
+    &.is-active {
+        animation: fv_SlideDownAnimation 0.5s ease forwards  ;
+          }
+
+    @include mq(sp) {
+        height: 288px;
+        max-width: 280px;
+        top: auto;
+        left: 0;
+        bottom: 43.5px;
+    }
+    
+}
+.p-mv__inner {
+    padding-inline: rm(78);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+   
+
+    @include mq(sp) {
+        padding-inline: rm(27);
+    }
+}
+.p-mv__copy {
+   @include font(16, 500, 1.5,0.1);
+   line-height: 28px;
+   text-align: center;
+   padding-bottom: rm(40);
+
+   @include mq(sp) {
+ padding-bottom: rm(16);
+ font-size: rm(13);
+}
+   
+   
+}
+.p-mv__text-wrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: rm(10);
+    align-items: center;
+    padding-block: rm(27);
+    border-top: 1px solid #7576768F;
+    border-bottom: 1px solid #7576768F;
+
+    @include mq(sp) {
+        row-gap: rm(8);
+        padding-block: rm(15);
+       }
+ 
+    
+}
+.p-mv__title {
+    @include font(48, 400, 1, 0.08);
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+
+    @include mq(sp) {
+        font-size: rm(21);
+       }
+
+    span {
+        @include font(64, 400, 1, 0.08);
+        line-height: 1;
+        color: $color-main;
+
+        @include mq(sp) {
+            font-size: rm(37);
+           }
+    }
+}
+.p-mv__title-mid {
+    @include font(36, 400, 1, 0.08);
+    line-height: 1;
+
+    @include mq(sp) {
+        font-size: rm(18);
+       }
+}
+
+.p-mv__logo {
+    @include mq(sp) {
+        display: none;
+       }
+}
+
+
+
+//最近見たレポート　のセクション ========================
+
+.p-recent {
+    padding-block: rm(73) rm(64);
+    position: relative;
+    background-color: $color-bg;
+    margin-top: 117px;
+    z-index: -2;
+    width: 100%;
+    overflow-x: hidden;
+
+    @include mq(sp) {
+       margin-top: 95px;
+       padding-block: rm(64) rm(21);
+       }
+}
+
+.recent-top__swiper-wrappe,
+.recent-top__swiper,
+.recent-bottom__swiper-wrappe,
+.recent-bottom__swiper,
+.best-planner__swiper-wrappe,
+.best-planner__swiper,
+.plan__swipe__swiper-wrappe,
+.plan__swipe__swiper,
+.reccomendation__swiper-wrappe,
+.reccomendation__swiper,
+.voice__swiper-wrappe,
+.voice__swiper  {
+    overflow: visible;
+}
+.popular__swiper,
+.popular__swiper-container,
+.popular__swiper-wrappe,
+.recome__swiper,
+.recome__swiper-container,
+.recome__swiper-wrappe {
+   overflow-y: visible;
+   @include mq(sp) {
+    overflow: visible;
+       }
+}
+.popular__swiper-container {
+    @include mq(sp) {
+        padding-block: 40px;
+           }
+}
+.recent-bottom__swiper-container {
+    margin-top: 24px;
+}
+
+//ベストプランナーのセクション ========================
+
+.p-best-planner {
+    padding-block: 80px 64px;
+    overflow-x: hidden;
+    width: 100%;
+
+    @include mq(sp) {
+        padding-block: 69px 47px;
+           }
+}
+
+.p-best-planner__title {
+    @include font(36, 400, 1, 1.6);
+    line-height: 60px;
+
+    @include mq(sp) {
+        font-size: rm(21);
+        line-height: 1.8;
+           }
+
+    span {
+        @include font(48, 400, 1, 1.6);
+        line-height: 60px;
+        color: $color-main;
+
+         @include mq(sp) {
+       font-size: rm(30);
+       line-height: 1.8;
+           }
+    }
+}
+
+.p-best-planner__bottom {
+    display: flex;
+    flex-direction: column;
+    row-gap:40px ;
+    align-items: center;
+    text-align: center;
+
+     
+    @include mq(sp) {
+        row-gap: 20px;
+            }
+}
+
+.p-best-planner__text {
+    @include font(18, 500, 1, 1.05);
+    line-height: 40px;
+
+
+    @include mq(sp) {
+        font-size: rm(16);
+        line-height: 1.8;
+            }
+}
+
+.p-best-planner__btn-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 16px;
+    opacity: 0;
+    translate: 0 50px;
+
+
+    &.is-active {
+            animation: slideUpAnimation2 0.5s ease forwards  ;
+       
+    }
+
+    @include mq(sp) {
+        row-gap: 12px;
+            }
+}
+
+.p-best-planner__bg {
+    position: absolute;
+    left: 50%;
+    translate: -50% 0;
+    bottom: -60px;
+    width: min(1047px, 100%);
+    height: auto;
+    aspect-ratio: 1047 / 565;
+    z-index: -1;
+
+    
+    @include mq(sp) {
+        width: min(398px, 100%);
+            }
+
+    img {
+        object-fit: contain;
+    }
+}
+
+.best-planner__swiper-slide {
+    width: 253px;
+    height: auto;
+    aspect-ratio: 1;
+
+
+    @include mq(sp) {
+        width: 110px;
+            }
+
+    img {
+        object-fit: cover;
+    }
+}
+
+//おすすめのプラン　のセクション ========================
+
+.p-reccomend {
+    padding-block: rm(64);
+
+    @include mq(sp) {
+        padding-block: rm(61) rm(73);
+        
+            }
+
+    
+}
+
+//人気のプラン　のセクション ========================
+
+.p-popular {
+    padding-block: rm(73) rm(63);
+    background-color: #F4F4F4;
+    overflow-x: hidden;
+    width: 100%;
+
+    @include mq(sp) {
+        padding-block: rm(64);
+        
+            }
+}
+
+//プラン　別人気　レポート　ののセクション ========================
+
+
+.p-plan__section {
+    padding-block: rm(62) rm(64);
+    padding-inline: rm(22);
+    background-color: #fff;
+    margin-block: rm(58) rm(62);
+
+    @include mq(sp) {
+        padding-block: rm(49) rm(48);
+        
+            }
+  
+}
+.p-plan__block {
+    padding-block: rm(69) rm(85);
+    padding-inline: rm(47) rm(51);
+    width: 100%;
+    margin-block: rm(64);
+    height: auto;
+    background-color: $color-bg;
+    position: relative;
+    z-index: 1;
+    @include mq(sp) {
+        margin-block: rm(24) rm(48);
+        padding-inline: rm(26);
+        padding-block: rm(48);
+        
+            }
+}
+
+.p-plan__swipe__swiper-container {
+    margin-block: rm(64);
+
+    @include mq(sp) {
+        margin-block: rm(23) rm(36);
+        
+            }
+}
+
+//人気のウェディングプランナー のセクション ========================
+
+.p-reccomendation {
+    padding-block: rm(64);
+    width: 100%;
+    overflow-x: hidden;
+}
+
+//キーワードからプランナーを探す のセクション ========================
+
+.p-pickup-tag {
+    padding-block: rm(64) rm(119);
+    background-color: $color-bg;
+
+    @include mq(sp) {
+        padding-block: rm(109) rm(72);
+        
+            }
+}
+
+.p-pickup-tag__desc {
+    @include font(20, 400, 1, 0);
+    line-height: 1;
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: center;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 1px;
+      height: 110%;
+      background-color: $color-main;
+      position: absolute;
+      top: 50%;
+      translate: 0 -50%;
+
+   
+      
+    }
+    &::before {
+        left: 20px;
+        rotate: -30deg;
+    }
+    &::after {
+        right: 20px;
+        rotate: 30deg;
+    }
+}
+
+.p-picup-tag__list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include mq(sp) {
+        flex-direction: column;
+        align-items: center;
+        
+        
+            }
+
+    
+}
+
+.p-pickup-tag__item {
+    width: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: rm(40);
+     padding-inline: rm(25);
+     position: relative;
+
+     @include mq(sp) {
+        width: 80%;
+        padding-block: rm(48);
+        
+            }
+
+     &::before {
+        content: '';
+        height: 80%;
+        width: 1px;
+        background-color: #757676;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        translate: 0 -50%;
+
+        @include mq(sp) {
+            height: 1px;
+            width: 80%;
+            top: auto;
+            bottom: 0;
+            left: 50%;
+            translate: -50%;
+            right: auto;
+            
+                }
+     }
+
+     &:last-of-type {
+        &::before {
+            content: none;
+      
+    }
+}
+}
+
+//先輩花嫁からの口コミ のセクション ========================
+
+.p-voice {
+   padding-block: rm(78) rm(71);
+   width: 100%; 
+}
+
+
+//インスタグラム のセクション ========================
+
+.p-instagram {
+    padding-block: rm(64) rm(72);
+    width: 100%; 
+
+    @include mq(sp) {
+        padding-block: rm(68) rm(88);
+        
+            }
+ }
+ .p-instgram__item {
+    position: relative;
+    opacity: 0;
+
+    &.is-active {
+        animation: slideShowAnimation 0.5s ease forwards  ;
+    }
+
+    .in {
+        @include font(40, 700, 1, 0);
+        line-height: 1;
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+        left: -50px;
+        color: #fff;
+        filter:invert(1);
+        mix-blend-mode: color;
+    }
+ }
+
+
+
+
+ //スワイパー　ボタン のセクション ========================
+
+
+ .swiper-button-next,
+ .swiper-button-prev {
+    z-index: 80;
+    
+    &::before {
+        content: '';
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $color-main;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        z-index: 100;
+        opacity: 0.4;
+        
+    }
+
+    &::after {
+        font-size: 18px;
+        color: #fff;
+        z-index: 111;
+        
+    }
+ }
+
+ .swiper-button-prev  {
+    &::after {
+        content: 'prev';
+    }
+ }
+
+ .voice__swiper-button-prev,
+ .voice__swiper-button-next {
+    top: 32%;
+    @include mq(sp) {
+      top: 20%;
+        
+            }
+ }
+ .popular-button-prev,
+ .popular-button-next,
+ .recome-swiper-button-prev,
+ .recome-swiper-button-next,
+ .bl-voice-button-prev,
+ .bl-voice-button-next  {
+        
+    @include mq(pc) {
+      
+        opacity: 0;
+        pointer-events: none;
+            }
+ }
+ .reccomendation__swiper-button-prev {
+    left: -4%;
+    @include mq(sp) {
+        left: 3%;
+        top: 50%;
+        translate: 0 -50%;
+           }
+ }
+ .reccomendation__swiper-button-next {
+    right: -4%;
+    @include mq(sp) {
+        right: 3%;
+        top: 50%;
+        translate: 0 -50%;
+           }
+ }
+ .bl-voice__swiper-container {
+    position: relative;
+    padding-block: 30px;
+ }
+ .recome__swiper-container {
+    position: relative;
+    padding-block: 30px;
+ }
+
+ .plan__swiper-button-prev,
+ .plan__swiper-button-next {
+    bottom: 11%;
+    top: auto;
+ }
+ .plan__swiper-button-prev,
+ .recent-bottom__swiper-button-prev,
+ .recent-top__swiper-button-prev
+  {
+    left: -2%;
+    @include mq(sp) {
+        left: 3%;
+        top: 50%;
+        translate: 0 -50%;
+           }
+   
+ }
+ .plan__swiper-button-next,
+ .recent-bottom__swiper-button-next,
+ .recent-top__swiper-button-next {
+    right: -2%;
+    @include mq(sp) {
+        right: 3%;
+        top: 50%;
+        translate: 0 -50%;
+        
+            }
+ }
+
+ .recent-top__swiper-button-prev,
+ .recent-top__swiper-button-next {
+    top: 27%;
+ }
+
+ .recent-bottom__swiper-button-prev,
+ .recent-bottom__swiper-button-next {
+    bottom: 25%;
+    top: auto;
+ }
+
+ .voice__swiper-container,
+ .p-plan__swipe__swiper-container {
+    position: relative;
+ }
+
+//1文字ずつ出現する
+.animated__slideShow {
+    overflow: hidden;
+    .char {
+      opacity: 0;
+    }
+  }
+
+  //1文字ずつ出現する
+.animated__slideUp {
+    overflow: hidden;
+    .char {
+      translate: 0 100%;
+    }
+  }

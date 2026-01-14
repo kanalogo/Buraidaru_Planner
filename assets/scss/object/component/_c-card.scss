@@ -1,0 +1,1256 @@
+@use "../../global" as *;
+
+//プランナーのカード  ========================
+
+.c-planner__item {
+    width: min(490px, 100%);
+    height: 160px;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &::before {
+        content: '';
+        width: calc(100% - 7px);
+        height: calc(100% - 14px);
+        border: 1px solid #fff;
+        position: absolute;
+        top: 7px;
+        left: 7px;
+    }
+}
+.c-planner__image {
+    width: 150px;
+    height: 100%;
+
+    img {
+        object-fit: cover;
+    }
+}
+
+.c-planner__text-wrap {
+    width: calc(100% - 150px);
+    padding-inline: rm(37) rm(26);
+    padding-block: rm(8) rm(13);
+}
+.c-planner__name {
+    @include font(22, 400, 1.5, 0);
+    line-height: 1.5;
+}
+.c-planner__job {
+    @include font(12, 500, 1.5, 0);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+.c-planner__bottom-wrap {
+    display: flex;
+    align-items: flex-start;
+    column-gap: rm(8);
+    padding-top: 16px;
+    border-top: 1px solid $color-base;
+}
+.c-tag__area {
+    display: inline-block;
+    padding: rm(4) rm(8);
+    border: 1px solid $color-main;
+    color: $color-main;
+    width: fit-content;
+    @include font(10, 500, 1, 0);
+    line-height: 1;
+    white-space: nowrap;
+}
+
+
+
+//レポートのカード ========================
+
+.c-report__item {
+    width: min(416px, 100%);
+    height: 450px;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+
+
+    @include mq(sp) {
+        width: min(297px, 100%);
+        height: auto;
+        aspect-ratio: 297 / 107;
+        padding: 8px;
+       }
+
+    
+
+    &::before {
+        content: '';
+        width: calc(100% - 24px);
+        height: calc(100% - 24px);
+        border: 1px solid $color-main;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+
+        @include mq(sp) {
+            width: min(297px, 100%);
+            height: auto;
+            width: calc(100% - 8px);
+             height: calc(100% - 8px);
+             top: 4px;
+             left: 4px;
+            
+    
+   
+           }
+    }
+}
+.c-report__image {
+    width: 100%;
+    height: 216px;
+
+     @include mq(sp) {
+        height: 100%;
+       }
+
+    
+
+    img {
+        object-fit: cover;
+    }
+}
+
+.c-report__text-wrap {
+    width: 332px;
+    padding-inline: rm(16) rm(17);
+    padding-block: rm(16) rm(19);
+    margin-inline: auto;
+    margin-top: -28px;
+    background-color: #FFFFFFE0;
+    display: flex;
+    column-gap: 8px;
+    flex-direction: column;
+
+
+     @include mq(sp) {
+        width: calc(100% - 14px);
+        margin-inline: auto;
+        margin-top: -20px;
+       }
+}
+.c-report__site {
+    @include font(12, 500, 1.5, 0);
+    line-height: 1;
+    padding: 2px 8px;
+    background-color: $tag-color-green;
+    color: #fff;
+    display: inline-block;
+    width: fit-content;
+
+    &.--orange {
+        background-color: $tag-color-orange;
+    }
+
+    
+}
+
+.c-report__bottom-wrap {
+    padding-top: 8px;
+    border-top: 1px solid #000;
+    display: flex;
+    row-gap: 8px;
+    flex-direction: column;
+}
+
+.c-tag__list {
+    display: flex;
+    align-items: center;
+    column-gap: rm(8);
+   
+}
+.c-tag__area {
+    display: inline-block;
+    padding: rm(4) rm(8);
+    border: 1px solid $color-main;
+    color: $color-main;
+    @include font(10, 500, 1, 0);
+    line-height: 1;
+    white-space: nowrap;
+}
+
+
+
+
+.c-report__title {
+    @include font(18, 400, 1.5, 0);
+    line-height: 1.5;
+    padding-bottom: 8px;
+}
+
+.c-best-planner_swipe {
+    margin-top: 54px;
+}
+
+
+//おすすめ　のカード ========================
+
+.c-reccomend__item {
+    width: min(342px, 100%);
+    height: 125px;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+
+    &.is-active {
+        animation: slideShowAnimation 0.5s ease forwards  ;
+    }
+
+    @include mq(sp) {
+        width: min(292px, 100%);
+        height: 107px;
+        
+            }
+
+    @media (hover: hover) {
+        &:hover {
+          cursor: pointer;
+              
+          .c-reccomend__image {
+
+          &::before {
+           opacity: 1;
+          }
+        }
+
+          
+        }
+}
+
+    &::after {
+        content: '';
+        width: calc(100% - 14px);
+        height: calc(100% - 14px);
+        border: 1px solid #fff;
+        position: absolute;
+        top: 7px;
+        left: 7px;
+        
+        @include mq(sp) {
+            width: calc(100% - 8px);
+            height: calc(100% - 8px);
+            top: 4px;
+             left: 4px;
+            
+                }
+
+        
+
+        
+    }
+
+    &::before {
+        content: '';
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        translate: -50% -50%;
+        z-index: 2;
+    }
+
+    &.--pink {
+        &::before {
+            background-color: $tag-color-pink;
+        }
+    }
+    &.--blue {
+        &::before {
+            background-color: $tag-color-blue;
+        }
+    }
+    &.--orange {
+        &::before {
+            background-color: $tag-color-orange;
+        }
+    }
+    &.--bage {
+        &::before {
+            background-color: $tag-color-bage;
+        }
+    }
+    &.--green {
+        &::before {
+            background-color: $tag-color-green;
+        }
+    }
+    
+    
+}
+
+.c-reccomend__body {
+    
+}
+.c-reccomend__image {
+    width: 125px;
+    height: 100%;
+    position: relative;
+
+    @include mq(sp) {
+       width: 106px;
+        
+            }
+
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 342px;
+      height: 125px;
+      background-color: rgba(0,0,0, 0.4);
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+      @include mq(sp) {
+        width: 297px;
+      height: 107px;
+        
+            }
+    }
+
+
+    img {
+        object-fit: cover;
+    }
+}
+
+.c-reccomend__text-wrap {
+    width: calc(100% - 125px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    @include mq(sp) {
+        width: calc(100% - 106px);
+        
+            }
+  
+
+
+}
+.c-reccomend__text {
+    @include font(20, 500, 1.5, 0);
+    line-height: 27px;
+    @include mq(sp) {
+        font-size: rm(16);
+        line-height: 1.5;
+        
+            }
+    
+
+}
+.c-reccomend__arrow {
+    position: absolute;
+    bottom: rm(18);
+    right: rm(16);
+
+    img {
+        object-fit: contain;
+    }
+}
+
+//人気　のカード ========================
+
+.popular__swiper-slide {
+
+    @include mq(pc) {
+    &:nth-of-type(1) {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+      }
+    
+      &:nth-of-type(2) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+      &:nth-of-type(3) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+    }
+    
+}
+
+.c-popular__card {
+    width: 100%;
+    height: auto;
+    padding-block: rm(40) rm(28);
+    padding-inline: rm(53) rm(71);
+    position: relative;
+    background-color: #fff;
+
+    @include mq(sp) {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 180px;
+    }
+
+ 
+    
+
+    &:nth-of-type(1) {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+      }
+    
+      &:nth-of-type(2) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        padding-inline: rm(42) rm(47);
+        padding-block: rm(37) rm(40);
+
+        .c-popular__card-image {
+            aspect-ratio: 236 / 226;
+        }
+        .c-popular__card-top {
+            column-gap: rm(24);
+        }
+      }
+    
+      &:nth-of-type(3) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        padding-inline: rm(42) rm(47);
+        padding-block: rm(37) rm(40);
+        .c-popular__card-image {
+            aspect-ratio: 236 / 226;
+        }
+        .c-popular__card-top {
+            column-gap: rm(24);
+        }
+      }
+
+    &::after {
+        content: '';
+        width: calc(100% - 28px);
+        height: calc(100% - 28px);
+        border: 1px solid $color-main;
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        z-index: 3;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 20px;
+        top: 0;
+        width: 41px;
+        height: 50px;
+        background-image: url('./../img/flag-3.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 8;
+        
+        
+      }
+
+      &:nth-of-type(2) {
+        &::before {
+            background-image: url('./../img/flag-2.svg');
+        }
+    }
+
+    &:nth-of-type(3) {
+        &::before {
+            background-image: url('./../img/flag-1.svg');
+        }
+    }
+}
+.c-popular__card-top {
+    display: flex;
+    align-items: center;
+    column-gap: rm(32);
+    padding-bottom: 24px;
+}
+.c-popular__card-image {
+    width: calc(540 / 1032 * 100%);
+    height: 294px;
+    @include mq(sp) {
+        font-size: rm(16);
+        line-height: 1.5;
+        width: 100%;
+        
+            }
+
+    img {
+        object-fit: cover;
+    }
+}
+
+.c-popular__card-textWrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: rm(32);
+    @include mq(sp) {
+      position: absolute;
+      left: 50%;
+      translate: -50%;
+      width: 82%;
+      background-color: #FFFFFFE0;
+      top: 30%;
+      padding: 12px;
+        
+            }
+}
+
+.c-popular__bottom-wrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: rm(24);
+    max-width: 285px;
+  
+}
+
+.c-popular__site {
+    @include font(12, 500, 1.5, 0);
+    line-height: 1.5;
+    padding: 4px 10px;
+    background-color: $tag-color-green;
+    color: #fff;
+    display: inline-block;
+    width: fit-content;
+
+    &.--orange {
+        background-color: $tag-color-orange;
+    }
+    &.--pink {
+        background-color: $tag-color-pink;
+    }
+
+    
+}
+
+.c-popular__card-copy {
+    @include font(20, 400, 1, 0);
+    line-height: 1.5;
+}
+
+.c-poplar__card-bottom {
+    display: flex;
+    flex-direction: column;
+    row-gap: rm(26);
+    padding-top: 26px;
+    border-top: 1px solid $color-base;
+    padding-inline: rm(3);
+    padding-bottom: 42px
+}
+.c-poplar__card-title {
+    @include font(20, 500, 1, 0);
+    line-height: 1.5;
+    color: $color-main;
+}
+.c-poplar__card-text {
+    @include font(16, 500, 1, 0);
+    line-height: 1.5;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; // 最大の行数を入れる
+    color: #000;
+}
+.c-poplar__card-list {
+   display: flex;
+   align-items: end;
+   justify-content: space-between; 
+}
+.c-small__container {
+    display: flex;
+    align-items: center;
+    column-gap: rm(16);
+    
+ }
+ .c-small__image {
+    width: 65px;
+    height: 65px;
+    position: relative;
+
+    &::after {
+        content: '';
+        width: 19px;
+        height: 19px;
+        background-color: $color-main;
+        position: absolute;
+        top: 0;
+        left: 0;
+        translate: -50% -50%;
+    }
+
+    img {
+        object-fit: cover;
+    }
+ }
+
+ .c-small__text-wrap {
+    display: flex;
+    flex-direction: column;
+ }
+ .c-small__job {
+    @include font(10, 500, 1, 0);
+    line-height: 1.5;
+    color: #757676;
+ }
+ .c-small__name {
+    @include font(16, 500, 1, 0);
+    line-height: 1.5;
+    
+ }
+ .c-small__comp {
+    @include font(12, 500, 1, 0);
+    line-height: 1.5;
+    
+ }
+
+
+
+
+
+//プラン別人気　　のカード ========================
+
+
+.c-plan__area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 28px;
+
+    &:nth-of-type(3) {
+        row-gap: 14px;
+    }
+
+    
+}
+
+.c-plan__card {
+    width: 100%;
+    height: auto;
+    padding-block: rm(20) rm(64);
+    padding-inline: rm(22) rm(24);
+    position: relative;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include mq(sp) {
+        padding-inline: rm(17);
+        padding-block: rm(21) rm(15);
+          }
+
+          @include mq(sp) {
+            left: 3%;
+               }
+   
+
+    .c-small__container {
+        margin-left: 12px;
+    }
+
+    &::after {
+        content: '';
+        width: calc(100% - 24px);
+        height: calc(100% - 24px);
+        border: 1px solid $color-main;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        z-index: 3;
+        @include mq(sp) {
+            height: calc(100% - 17px);
+            left: 8px;
+          }
+    }
+}
+
+.c-plan__card-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 302 / 202;
+    position: relative;
+
+    img {
+        object-fit: cover;
+    }
+}
+
+.c-plan__card-textWrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: rm(10);
+    margin-top: 10px;
+
+    @include mq(sp) {
+       background-color: #FFFFFFE0;
+       margin-top: -30px;
+       width: calc(100% - 14px);
+       position: relative;
+       z-index: 3;
+       margin-inline: auto;
+       padding-block: rm(14);
+       padding-inline: rm(14);
+       }
+}
+
+.c-plan__bottom-wrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: rm(10);
+    max-width: 250px;
+    margin-bottom: 18px;
+  
+}
+
+.c-plan__card-copy {
+    @include font(18, 400, 1, 0);
+    line-height: 1.5;
+}
+
+
+
+//プラン別人気　　のカード ========================
+
+
+.c-reccomendation__card {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background-color: $color-bg;
+
+    .c-tag__wrap {
+        @include mq(sp) {
+            position: absolute;
+    /* left: 50%; */
+    left: 3%;
+    bottom: 29%;
+    width: 60%;
+               }
+    }
+
+    &.--top {
+        .c-tag__wrap {
+            @include mq(sp) {
+              bottom: 45%;
+                   }
+        }
+    }
+
+    &.--bg-white {
+        background-color: #fff;
+
+        &::before {
+            content: none;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        top: 0;
+        width: 41px;
+        height: 50px;
+        background-image: url('./../img/flag-3.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 8;
+        
+        
+      }
+
+      &:nth-of-type(2) {
+        &::before {
+            background-image: url('./../img/flag-2.svg');
+        }
+    }
+
+    &:nth-of-type(3) {
+        &::before {
+            background-image: url('./../img/flag-1.svg');
+        }
+    }
+}
+
+.c-reccomendation__card-inner {
+    padding-inline: rm(32);
+    padding-block: rm(40);
+    display: flex;
+    flex-direction: column;
+    row-gap: rm(19);
+
+    @include mq(sp) {
+        row-gap: rm(120);
+        padding-inline: rm(6);
+    padding-block: rm(21);
+           }
+}
+
+.c-reccomendation__card-top {
+    display: flex;
+    column-gap: rm(12);
+    
+}
+
+.c-reccomendation__card-left {
+    flex-basis: 143px;
+    min-width: 143px;
+}
+.c-reccomendation__card-right {
+    flex-basis: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: rm(16);
+}
+.c-reccomendation__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 140 / 180;
+    position: relative;
+
+    img {
+        object-fit: cover;
+    }
+}
+.c-reccomendation__name {
+    @include font(22, 400, 1, 0);
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+.c-reccomendation__comp {
+    @include font(12, 400, 1, 0);
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.c-reccomendation__card-copy {
+    @include font(18, 400, 1, 0);
+    line-height: 1.5;
+}
+
+.c-reccomendation__text-wrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.c-reccomendation__card-bottom {
+    display: flex;
+    flex-direction: column;
+    row-gap: rm(16);
+}
+
+.c-reccomendation__card-checkpiont {
+    display: flex;
+    column-gap: rm(8) ;
+}
+.c-reccomendation__card-checkpiont {
+    padding: 10px 18px;
+    background-color: #fff;
+
+    &.--bg-gray {
+        background-color: #75767624;
+    }
+}
+.c-reccomendation__card-point {
+    @include font(12, 400, 1, 0);
+    line-height: 1.5;
+    position: relative;
+    margin-left: 1em;
+
+    &::before {
+        content: '';
+        width: 13px;
+        height: 13px;
+        background-image: url('./../img/simple-line-icons_login.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 2px;
+       
+        left: -16px;
+    }
+}
+.c-reccomendation__card-pointlist {
+    display: flex;
+    flex-direction: column;
+    row-gap: rm(16);
+    li {
+        @include font(14, 400, 1, 0);
+        line-height: 1;
+        margin-left: 1em;
+        list-style: disc;
+    }
+}
+.c-reccomendation__garrely-title {
+    @include font(12, 400, 1, 0);
+    line-height: 1.5;
+    position: relative;
+    margin-bottom: 8px;
+    margin-left: 1em;
+
+    &::before {
+        content: '';
+        width: 13px;
+        height: 13px;
+        background-image: url('./../img/simple-line-icons_login.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 2px;
+       
+        left: -16px;
+    }
+}
+.c-reccomendation__gallery-list {
+    display: flex;
+    column-gap: rm(16);
+    width: 100%;
+
+    img {
+        width: 50%;
+        max-width: 159px;
+        height: auto;
+        aspect-ratio: 159 / 111;
+        object-fit: cover;
+    }
+}
+
+//口コミ　　のカード ========================
+
+
+.c-voice__card {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding-inline: rm(16) rm(24);
+    padding-block: rm(21) rm(16);
+    background-color: #fff;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        top: 0;
+        width: 41px;
+        height: 50px;
+        background-image: url('./../img/flag-3.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 8;
+        
+        
+      }
+
+      &:nth-of-type(2) {
+        &::before {
+            background-image: url('./../img/flag-2.svg');
+        }
+    }
+
+    &:nth-of-type(3) {
+        &::before {
+            background-image: url('./../img/flag-1.svg');
+        }
+    }
+}
+
+
+
+.c-voice__container {
+    display: flex;
+    column-gap: rm(16);
+}
+.c-voice__text-wrap {
+    width: 100%;
+}
+
+.c-voice__image {
+    width: 136px;
+    min-height: 136px;
+    height: auto;
+    aspect-ratio: 136 / 157;
+
+    img {
+        object-fit: cover;
+    }
+}
+.c-voice__comp {
+    @include font(14, 500, 1, 0);
+    line-height: 1.5;
+}
+.c-voice__name {
+    @include font(20, 500, 1, 0);
+    line-height: 1.5;
+}
+.c-voice__rating {
+    @include font(16, 500, 1, 0);
+    line-height: 1.5;
+    margin-left: 104px;
+    position: relative;
+    display: block;
+
+    &::before {
+      content: '';
+      width:98px ;
+      height: 18px;
+      background-image: url('./../img/star-gold.svg');
+      background-repeat: repeat-x;
+      background-size: contain;
+      position: absolute;
+      top: 50%;
+      translate: 0 -50%;
+      left: -104px;
+    }
+
+    span {
+        @include font(12, 500, 1, 0);
+        line-height: 1.5; 
+        color: #757676;
+    }
+}
+.c-voice__flag {
+    position: absolute;
+    top: 4px;
+    left: 20px;
+    @include font(18, 400, 1, 0);
+    line-height: 1;
+    color: #fff;
+    z-index: 10;
+
+    &.--lf-2 {
+        left: 30px;
+    }
+
+    
+
+    span {
+        display: block;
+        @include font(12, 400, 1, 0);
+    line-height: 1; 
+    text-align: center;
+    }
+    
+}
+
+.c-voice__card-bottom {
+    margin-top: 16px;
+    
+}
+
+.c-voice__card-copy {
+    @include font(12, 500, 1, 0);
+    line-height: 1.5;
+    margin-left: 1em;
+    position: relative;
+    margin-left: 1em;
+
+    &::before {
+        content: '';
+        width: 13px;
+        height: 13px;
+        background-image: url('./../img/simple-line-icons_login.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 2px;
+       
+        left: -16px;
+    }
+}
+
+.c-voice__card-title {
+    @include font(14, 700, 1, 0);
+    line-height: 1.5;
+    color: #000
+}
+.c-voice__card-text {
+    @include font(12, 500, 1, 0);
+    line-height: 1.5;
+    color: #000;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; // 最大の行数を入れる
+}
+
+
+//口コミ　の スワイパー　のカード ========================
+
+.c-voice__wide {
+    width: min(1175px, 100%);
+    height: auto;
+    background-color: #fff;
+    padding-inline: rm(27) rm(84);
+    padding-block: rm(28) rm(31);
+    position: relative;
+    color: #000;
+}
+.c-voice__wide-copy {
+    width: 75px;
+    height: 75px;
+    background-color: $color-main;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    clip-path: polygon(0 0 , 100% 0, 0 100%);
+}
+.c-voice__copy-text {
+    @include font(14,400 ,1 ,0 );
+    line-height: 1;
+    position: absolute;
+    top: 12px;
+    left: 9px;
+}
+
+.c-voice__wide-container {
+    display: flex;
+    align-items: center;
+    column-gap: rm(32);
+}
+
+.c-voice__wide-image {
+    width: 229px;
+    min-width: 229px;
+    height: auto;
+    aspect-ratio: 229 / 236;
+
+    img {
+        object-fit: cover;
+    }
+}
+.c-voice__wide-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    
+}
+
+.c-voice__wide-title {
+    @include font(20,400 ,1 ,0 );
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+.c-voice__wide-rating {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+.c-voice__wide-rate-text {
+    @include font(14,500 ,1 ,0 );
+    line-height: 1.5;
+    color: #757676;
+    
+}
+.c-voice__wide-rate-image {
+    position: relative;
+    width: 133px;
+    height: auto;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 25px;
+      background-image: url('./../img/star-gold.svg');
+      background-repeat: repeat-x;
+      background-size: contain;
+      top: 50%;
+      translate: 0 -50%;
+      left: 0;
+    }
+}
+.c-voice__wide-desc {
+    @include font(16,500 ,1 ,0 );
+    line-height: 1.5;
+}
+.c-voice__wide-desc {
+    @include font(16,500 ,1 ,0 );
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.c-voice__wide-name {
+    @include font(14, 500, 1, 0);
+    line-height: 1.5;
+    margin-left: 1em;
+    position: relative;
+    margin-left: 1em;
+    margin-bottom: 8px;
+
+    &::before {
+        content: '';
+        width: 13px;
+        height: 13px;
+        background-image: url('./../img/simple-line-icons_login.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 2px;
+       
+        left: -16px;
+    }
+}
+
+.c-voice-wide__site {
+    @include font(12, 500, 1.5, 0);
+    line-height: 1.5;
+    padding: 4px 10px;
+    background-color: $tag-color-orange;
+    color: #fff;
+    display: inline-block;
+    width: fit-content;
+
+
+    
+}
+
+.c-voice__wide-pos {
+    position: absolute;
+    bottom: 20px;
+    right: 14%;
+}
+
+.c-voice__wide-right {
+    display: flex;
+    align-items: end;
+    column-gap: 4px;
+    
+}
+
+.plan__swiper-button-next,
+.plan__swiper-button-prev {
+    @include mq(sp) {
+        top: 50%;
+        translate: 0 -50%;
+           }
+}
+.plan__swiper-button-next {
+    @include mq(sp) {
+        right: 1%;
+           }
+}
+.plan__swiper-button-prev {
+    @include mq(sp) {
+        left: 1%;
+           }
+}
